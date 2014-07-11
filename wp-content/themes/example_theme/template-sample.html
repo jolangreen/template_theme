@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" href="<?php bloginfo('template_directory'); ?>/favicon.ico" type="image/x-icon" />
+<title>UntitledCompany</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0">
+
+<link href="style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="/css/parallax.css" data-skrollr-stylesheet />
+
+</head>
+
+<body class="home">
+
+<!-- Header
+================================================== -->
+<header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <h1><a href="<?php echo home_url( '/' ); ?>" class="logo"></a></h1>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+               <ul id="menu-header-menu" class="nav navbar-nav">
+                    <li class="current-menu-item"><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <form action="#" class="navbar-form pull-right" id="searchform" method="get">
+                    <input type="text" placeholder="" id="s" name="s" class="field input-medium search-query">
+                </form>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Banner
+================================================== -->
+<section class="banner">
+    <div id="myCarousel" class="carousel slide">
+        <!-- <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol> -->
+        <!-- Carousel items -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="">
+            </div>
+            <div class="item" >
+                <img src="">
+            </div>
+        </div>
+        <!-- Carousel nav -->
+        <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="carousel-control right" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div>
+</section>
+
+<!-- Main Content
+================================================== -->
+<section class="main">
+    <div class="container">
+        <div class="row">
+
+            <article class="primary col-md-8">
+                <h2><a href="#">Article Post Title</a></h2>
+
+                <div class="entry-meta">
+                    <a href="#">February 31, 2013</time></a>
+                </div><!-- .entry-meta -->
+
+                <div class="comments-link">
+                    <a href="#"><span class="leave-reply">Reply</span></a>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate sunt in culpa qui officia deserunt mollit anim id est laborum … <a href="#">Read More</a>
+                </p>
+                <div class="entry-meta">
+                    <span class="cat-links">Posted in <a href="#">Uncategorized</a></span> |
+                    <span class="comments-link"><a href="#">Leave a reply</a></span>
+                </div><!-- #entry-meta -->
+            </article>
+
+            <div class="secondary col-md-4">
+                <aside>
+                    <h3>Sample Title</h3>
+                    <ul class="menu">
+                        <li class="current-menu-item"><a href="#">Product Category</a></li>
+                        <li><a href="#">Product Category</a></li>
+                        <li><a href="#">Product Category</a></li>
+                        <li><a href="#">Product Category</a></li>
+                    </ul>
+                </aside>
+            </div><!-- /.col4 #secondary -->
+
+        </div><!-- /.row -->
+        <div class="row text-center">
+            <div class="col-md-4">
+                <h3>Sample Title</h3>
+                <p>This is some sample text for me to see how this looks.</p>
+            </div>
+            <div class="col-md-4">
+                <h3>Sample Title</h3>
+                <p>This is some sample text for me to see how this looks.</p>
+            </div>
+            <div class="col-md-4">
+                <h3>Sample Title</h3>
+                <p>This is some sample text for me to see how this looks.</p>
+            </div>
+        </div>
+
+    </div><!-- /.container -->
+</section>
+<div class="clear"></div>
+
+<!-- Footer ================================================== -->
+<footer>
+    <div class="container">
+        <ul>
+            <li><a href="#">home</a></li>
+            <li><a href="#">sample</a></li>
+            <li><a href="#">sample</a></li>
+            <li><a href="#">sample</a></li>
+            <li><a href="#">sample</a></li>
+            <li><a href="#">sample</a></li>
+        </ul>
+        <div class="text-muted">
+            &copy; <?=date('Y')?> UntitledCompany. All Rights Reserved.
+        </div>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type='text/javascript' src='js/bootstrap.js'></script>
+<script src="/js/skrollr.min.js"></script>
+<script src="/js/skrollr.stylesheets.min.js"></script>
+<script type="text/javascript">
+    var s = skrollr.init();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,497 @@
+@import url('bootstrap.css')
+
+$clrBackground: #FFF
+
+$clrPrimary: #1fae4b
+$clrSecondary: #4ec0c1
+
+$clrText: #626262
+$clrBrightest: #fff
+
+$clrLight: #e1e1e1
+$clrDark: #222
+$clrMutedLight: #999
+$clrMutedDark: #383838
+
+$bannerHeight: 500px
+
+$fontPrimary: 'robotoregular', Arial, Helvetica, Sans-serif
+$fontSecondary: 'HelveticaNeueThin', Arial, Helvetica, Sans-serif
+
+
+/* ==========================================================================
+   Global
+   ========================================================================== */
+
+body
+    background: $clrBackground
+    padding: 0px
+    font-family: $fontPrimary
+    color: $clrText
+    font-size: 17px
+
+a, a:visited
+    color: $clrPrimary
+    text-decoration: none
+    +transition(all 0.2s ease-in-out)
+
+a:hover, a:focus, a:active
+    color: $clrSecondary
+    text-decoration: none
+    
+hr
+    margin: 15px 0
+    border: 0
+    border-bottom: 1px solid $clrLight
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+.btn
+    color: $clrBrightest !important
+    background: $clrPrimary
+    //+border-radius(4px)
+    //+box-shadow(0px)
+    +transition(all 0.4s ease-in-out)
+
+.block-icon 
+    width: 40px
+    height: 40px
+    +border-radius(50%)
+    font-size: 100%
+    background: $clrPrimary
+    color: $clrBrightest
+    line-height: 40px
+    margin: 0 auto
+    display: block
+    
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+
+form
+    input[type="text"]
+        width: 250px
+        height: 20px
+        padding: 4px
+        background: #ffffff
+        border: 1px solid $clrLight
+        color: $clrText
+        font-size: 13px
+
+    textarea
+        width: 492px
+        height: 85px
+        padding: 4px
+        background: #ffffff
+        border: 1px solid $clrLight
+        color: $clrText
+        font-size: 12px
+
+    input[type="button"], input[type="submit"]
+        height: 36px
+        padding: 8px
+        background: $clrPrimary
+        cursor: pointer /* hand-shaped cursor */
+        cursor: hand /* for IE 5.x */
+        border: none
+        color: $clrBrightest
+        font-size: 14px
+        -moz-border-radius: 5px
+        border-radius: 5px
+        &:hover
+            background-color: $clrSecondary
+
+
+/* ==========================================================================
+   Layout Structure
+   ========================================================================== */
+
+
+// ----- HEADER -----
+
+header
+    .container
+        position: relative
+
+        h1
+            margin: 0
+            line-height: 0
+
+        h1 a.logo
+            display: block
+            float: left
+            left: 0
+            width: 100px
+            height: 50px
+            background: image-url("logo.png") no-repeat
+            margin-bottom: 15px
+
+// Navigation
+nav
+    background: $clrBackground
+
+    & a
+        color: $clrPrimary
+        &:hover
+            color: $clrBrightest
+            text-decoration: none
+
+    .nav li
+        display: inline-block
+        position: relative
+
+    .nav > li > a
+        padding: 15px 20px
+        border-right: 1px solid $clrLight !important
+        &:hover
+            background-color: $clrSecondary
+            text-decoration: none
+
+    /*Active State */
+    .nav
+        .current_page_item > a,
+        .current_page_ancestor > a,
+        .current-menu-item > a,
+        .current-menu-ancestor > a
+            color: $clrPrimary
+            text-decoration: none
+
+    button.navbar-toggle
+        background-color: $clrPrimary
+
+/* Sub-Menu */
+.nav
+
+    .menu-toggle
+        display: none
+
+    .sub-menu li a
+        color: #141412
+        display: block
+        font-size: 15px
+        line-height: 1
+        padding: 15px 20px
+        text-decoration: none
+
+    .sub-menu,
+    .children
+        background-color: $clrSecondary
+        border-top: 0
+        display: none
+        padding: 0
+        position: absolute
+        left: -2px
+        z-index: 99999
+
+    .sub-menu ul,
+    .children ul
+        border-left: 0
+        left: 100%
+        top: 0
+
+ul.nav ul a,
+.nav ul ul a
+    color: #fff
+    margin: 0
+    width: 200px
+
+ul.nav ul a:hover,
+.nav ul ul a:hover
+    background-color: $clrSecondary
+
+ul.nav li:hover > ul,
+.nav ul li:hover > ul
+    display: block
+
+    
+
+// ----- BANNER -----
+
+.banner
+    height: $bannerHeight
+
+.carousel
+    margin-bottom: 60px
+
+    .container
+        position: relative
+        z-index: 9
+
+    .item
+        height: $bannerHeight
+
+    img
+        position: absolute
+        top: 0
+        left: 0
+        min-width: 100%
+        height: $bannerHeight
+
+    .carousel-caption
+        background-color: transparent
+        position: static
+        max-width: 550px
+        padding: 0 20px
+        margin-top: 200px
+
+    .carousel-caption h1,
+    .carousel-caption .lead
+        margin: 0
+        line-height: 1.25
+        color: #fff
+        text-shadow: 0 1px 1px rgba(0,0,0,.4)
+
+    .carousel-caption .btn
+        margin-top: 10px
+
+
+// ----- CONTENT -----
+
+.main
+    padding: 30px 0
+
+// .primary, .secondary
+    
+
+.secondary
+    aside
+        margin-bottom: 30px
+    h3
+        color: $clrText
+        margin-bottom: 5px
+    ul
+        padding-left: 0
+        margin-left: 0
+        margin-bottom: 35px
+    ul li
+        list-style: none
+        border-bottom: 1px dotted $clrLight
+        line-height: 40px
+        margin-bottom: 0
+        a
+            color: $clrText
+            &:hover
+                color: $clrPrimary
+                text-decoration: none
+
+        &.current_page_item > a,
+        &.current_page_ancestor > a,
+        &.current-menu-item > a,
+        &.current-menu-ancestor > a
+            color: $clrPrimary
+
+        ul ul li
+            border-bottom: none
+            line-height: 30px
+            padding-left: 20px
+
+        li:before   
+            font-family: 'FontAwesome'
+            content: '\f105'
+            margin: 0 10px 0 -15px
+
+
+// ----- FOOTER -----
+
+footer
+    height: 100%
+
+    .container
+        position: relative
+        border-top: 1px solid $clrLight
+        padding: 15px 0
+        text-align: center
+
+    ul
+        padding-left: 0
+        
+        li
+            display: inline-table
+            list-style: none
+            a
+                color: $clrText
+                text-decoration: none
+                padding: 0 10px
+
+                &:hover
+                    color: $clrPrimary
+                    text-decoration: underline
+
+
+
+/* ==========================================================================
+   Features / Page Elements
+   ========================================================================== */
+
+
+// ----- LIST -----
+article.primary 
+    ul 
+        list-style-type: none
+        padding-left: 15px
+
+        li:before   
+            font-family: 'FontAwesome'
+            content: '\f058'
+            margin: 0 5px 0 -15px
+
+        li
+            margin-bottom: 15px
+
+    ol li:before
+        content: none
+    
+
+
+// ----- TABLE -----
+article table 
+    thead tr
+        background: $clrPrimary
+        color: $clrBrightest
+    
+    tr:nth-child(2n)
+        background: #e0e3e5
+
+    tr
+        background: #f1f1f1
+
+    tr td
+        padding: 5px 10px
+
+
+// ----- BLOG -----
+
+.blog article
+    border-bottom: 1px solid $clrLight
+    margin-bottom: 30px
+
+#nav-single
+    border-top: 1px solid $clrLight
+    padding: 25px 0
+
+.nav-next
+    float: right
+
+.textwidget
+    padding: 10px
+
+
+
+/* ==========================================================================
+   ADVERTISING
+   ========================================================================== */
+
+.ad-leaderboard
+    width: 728px
+    margin: 0 auto
+
+@media (max-width: 768px)
+    .ad-leaderboard
+        display: none
+        width: 0
+
+    .ad-rectangle
+        margin: 0 auto
+        width: 300px
+
+//anything above 768px show the following styles
+@media (min-width: 768px)
+    .ad-rectangle
+        display: none
+
+
+/* ==========================================================================
+   RESPONSIVE CSS
+   ========================================================================== */
+
+/* Small devices (tablets, 768px and up) */
+//@media (min-width: @screen-sm-min)
+
+/* Medium devices (desktops, 992px and up) */
+//@media (min-width: @screen-md-min)
+
+/* Large devices (large desktops, 1200px and up) */
+//@media (min-width: @screen-lg-min)
+
+
+@media (max-width: 979px)
+    body
+        padding-left: 0
+        padding-right: 0
+
+// ---- BANNER ----
+@media (max-width: 979px)
+    .container.navbar-wrapper
+        margin-bottom: 0
+        width: auto
+
+    .navbar-inner
+        border-radius: 0
+
+    nav#access
+        float: none
+        background-color: $clrPrimary
+
+    .nav-collapse .navbar-form, .nav-collapse .navbar-search
+        border-top: 1px solid $clrLight
+        border-bottom: 1px solid $clrLight
+
+    .navbar
+        height: auto
+
+    .carousel .item
+        height: $bannerHeight
+
+    .carousel img
+        width: auto
+        height: 383px
+
+
+
+//
+@media (max-width: 767px)
+    header#branding
+        margin-left: -20px
+        margin-right: -20px
+
+    nav
+        float: none
+        background-color: $clrPrimary
+
+    .nav-collapse .navbar-form, .nav-collapse .navbar-search
+        border-top: 1px solid $clrLight
+        border-bottom: 1px solid $clrLight
+
+    .navbar
+        height: auto
+
+    .carousel
+        margin-left: -20px
+        margin-right: -20px
+
+        .item
+            height: 300px
+
+        img
+            height: 300px
+
+    footer .container
+        text-align: center
+        .copyright
+            float: none
+
+    footer .container li
+        text-align: center
+        margin-bottom: 4px
+        font-size: 15px
+        padding: 5px
+        border-bottom: 1px solid $clrText
+
+    #footer
+        margin-left: -20px
+        margin-right: -20px
+        padding-left: 20px
+        padding-right: 20px
+
