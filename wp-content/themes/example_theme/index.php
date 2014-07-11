@@ -7,14 +7,17 @@
 				<?php get_template_part( 'content', get_post_format() ); ?>
 			<?php endwhile; ?>
 
-			<?php twentythirteen_paging_nav(); ?>
+			<div class="pagination">
+			    <?php html5wp_pagination(); // Pagination links (inside Functions.php) ?>
+			</div>
 
 		<?php else : ?>
 			<?php get_template_part( 'content', 'none' ); ?>
 		<?php endif; ?>
 
-		</div><!-- .primary -->
-        <div class="secondary col-md-4">
-            <?php get_sidebar(); ?>
-        </div><!-- .secondary -->
+	</div><!-- .primary -->
+    <div class="secondary col-md-4">
+        <?php get_sidebar(); ?>
+    </div><!-- .secondary -->
+
 <?php get_footer(); ?>

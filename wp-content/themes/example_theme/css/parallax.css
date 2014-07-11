@@ -1,32 +1,4 @@
-#icon-wordbubble {
-    -skrollr-animation-name:icon-wordbubble;
-}
+#parallaxed { -skrollr-animation-name: parallaxed; }
 
-@-skrollr-keyframes icon-wordbubble {
-    1200 {
-        top: 100%;
-    }
-
-    1600 {
-        top:10%;
-    }
-}
-
-
-
-#banner {
-    -skrollr-animation-name:banner;
-}
-
-@-skrollr-keyframes banner {
-    0 {
-        top: 0%;
-        opacity: 1;
-    }
-
-    300 {
-        top:20%;
-        opacity: 0.1;
-    }
-}
-
+@-skrollr-keyframes parallaxed { 10 { top: 0%; }
+  600 { top: 45%; } }

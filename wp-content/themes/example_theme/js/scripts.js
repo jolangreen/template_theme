@@ -22,13 +22,21 @@ $(function() {
 
 //animate elements
 $(window).scroll(function() {
-    $(‘#object).each(function(){
+    $('#object').each(function(){
     var imagePos = $(this).offset().top;
 
     var topOfWindow = $(window).scrollTop();
         if (imagePos < topOfWindow+800) {
-            $(this).addClass(“slideUp);
+            $(this).addClass("slideUp");
         }
     });
 });
 
+
+//Full Height
+$(function(){
+    $('.item') .css({'height': (($(window).height()))+'px'});
+    $(window).resize(function(){
+        $('.item') .css({'height': (($(window).height()))+'px'});
+    });
+});

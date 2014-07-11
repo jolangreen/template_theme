@@ -31,7 +31,7 @@
                 </button>
             </div>
             <div class="navbar-collapse collapse">
-               	<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav nav-bar' ) ); ?>
+               	<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu nav nav-bar' ) ); ?>
                 <?php get_search_form(); ?>
             </div>
         </div>
@@ -64,6 +64,21 @@
         <a class="carousel-control right" href="#myCarousel" data-slide="next">
             <span class="glyphicon glyphicon-chevron-right"></span>
         </a>
+    </div>
+</section>
+<?php } else { ?>
+<section class="page-intro">
+    <div class="tint">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1>Page Title</h1>
+                </div>
+                <div class="col-md-6">
+                    <div class="breadcrumb"><a href="<?php echo home_url( '/' ); ?>">Home</a> / <span class="active">About</span></div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 <?php } ?>

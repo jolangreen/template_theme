@@ -1,8 +1,4 @@
-<?php
-/*
-Template Name: Test Page
-*/
-?>
+
 
 
 <?php echo home_url( '/' ); ?> <!--For Link URL -->

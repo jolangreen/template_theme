@@ -1,13 +1,9 @@
 @import url('font-awesome.min.css')
 
-$clrBackground: #FFF
 
-$clrPrimary: #1fae4b
-$clrSecondary: #4ec0c1
-$clrText: #626262
-
-$fontPrimary: 'robotoregular', Arial, Helvetica, Sans-serif
-$fontSecondary: 'HelveticaNeueThin', Arial, Helvetica, Sans-serif
+/* ==========================================================================
+   Typography
+   ========================================================================== */
 
 // Define our font
 +font-face("robotoregular", font-files("roboto-regular-webfont.eot", "roboto-regular-webfont.eot?#iefix", "roboto-regular-webfont.woff", "roboto-regular-webfont.ttf", "roboto-regular-webfont.svg#robotoregular"))
@@ -44,13 +40,14 @@ h1
 
 h2
     font-size: 36px
-    color: $clrText
+    color: $clrDark
     margin-bottom: 15px
 
 h3
     font-size: 28px
-    color: $clrText
+    color: $clrDark
     margin-bottom: 7px
+    font-weight: bold
 
 p
     margin-bottom: 20px
