@@ -15,7 +15,8 @@
 <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?><!-- Replace with main navigation -->
 <?php wp_nav_menu( array('menu' => 'footer', 'after' => '' )); ?><!-- Replace with footer navigation -->.
 
-
+// Echo a certain amount of characters
+<?php echo substr($post->post_content, 0, 100) ?>...
 
 <!-- Output parent page title -->
 <h1>
