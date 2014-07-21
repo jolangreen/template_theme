@@ -1,6 +1,6 @@
 line_comments = false
 output_style = :compact # or :nested, :expanded, :compressed, :compact
-environment = :production
+environment = :development
 
 # Require any additional compass plugins here.
 # require 'lemonade'
@@ -16,3 +16,12 @@ preferred_syntax = :sass
 
 # To enable relative paths to assets via compass helper functions. Uncomment:
 relative_assets = true
+
+
+require 'fileutils'
+on_stylesheet_saved do |file|
+  if File.exists?(file) && File.basename(file) == "styles.css"
+    puts "Moving: #{file}"
+    FileUtils.mv(file, File.dirname(file) + "/../" + File.basename(file))
+  end
+end

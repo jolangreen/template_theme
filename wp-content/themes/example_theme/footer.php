@@ -13,10 +13,9 @@
     </div>
 </footer>
 
-<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script src="<?php bloginfo('template_directory'); ?>/js/bootstrap.min.js"></script>
-<script src="<?php bloginfo('template_directory'); ?>/js/skrollr.min.js"></script>
-<script src="<?php bloginfo('template_directory'); ?>/js/skrollr.stylesheets.min.js"></script>
+<script src="<?php bloginfo('template_directory'); ?>/bower_components/js/dist/jquery.min.js"></script>
+<script src="<?php bloginfo('template_directory'); ?>/bower_components/js/bootstrap.min.js"></script>
+<script src="<?php bloginfo('template_directory'); ?>/assets/js/scripts.js"></script>
 <script type="text/javascript">
     var s = skrollr.init();
 </script>
