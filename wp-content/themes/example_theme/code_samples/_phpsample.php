@@ -61,11 +61,6 @@
 <!-- Emmet -->
 div.container>div.row>div.col-md-
 
-//Highlight list of text then press (control+alt+enter)
-ul>li*
-
-//ADD LOREM TEXT
-lorem20
 
 /* icon list
 / li:before   
@@ -78,3 +73,5 @@ lorem20
 <!--[if lt IE 9]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
+
+http://stackoverflow.com/questions/23213296/why-does-sublime-text-editor-3-autocomplete-when-i-press-return
