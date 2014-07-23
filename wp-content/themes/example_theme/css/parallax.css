@@ -1,4 +1,14 @@
-#parallaxed { -skrollr-animation-name: parallaxed; }
 
-@-skrollr-keyframes parallaxed { 10 { top: 0%; }
-  600 { top: 45%; } }
+#parallaxed {
+    -skrollr-animation-name:parallaxed;
+}
+
+@-skrollr-keyframes parallaxed {
+    10 {
+        top: 0%;
+    }
+
+    600 {
+        top:45%;
+    }
+}

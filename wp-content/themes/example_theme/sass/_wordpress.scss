@@ -1,13 +1,4 @@
-/*!
-Theme Name:     EXAMPLE
-Theme URI:      http://EXAMPLE.com/wp-content/themes/EXAMPLE
-Author:         Jolan Green
-Author URI:     http://jolangreen.com/
-Description:    HTML5 Blank WordPress Theme
-Version:        1.0
-Tags:           Blank, HTML5, CSS3
-Text Domain:    EXAMPLE
-*/
+
 
 /* ==========================================================================
    Wordpress CSS
@@ -286,7 +277,7 @@ Comment Form
     margin: -20px 0 10px;
 }
 #respond input#submit {
-    background: #1fae4b;
+    background: $clrPrimary;
     border: none;
     -moz-border-radius: 3px;
     border-radius: 3px;
@@ -303,7 +294,7 @@ Comment Form
     text-shadow: 0 -1px 0 rgba(0,0,0,0.3);
 }
 #respond input#submit:active {
-    background: #1fae4b;
+    background: $clrPrimary;
     color: #FFF;
 }
 #respond #cancel-comment-reply-link {
@@ -359,4 +350,20 @@ p.comment-form-comment {
 }
 .form-allowed-tags {
     display: none;
+}
+
+
+//Banner Image
+#parallaxed {
+    -skrollr-animation-name:parallaxed;
+}
+
+@-skrollr-keyframes parallaxed {
+    10 {
+        top: 0%;
+    }
+
+    600 {
+        top:45%;
+    }
 }

@@ -17,10 +17,9 @@ preferred_syntax = :sass
 # To enable relative paths to assets via compass helper functions. Uncomment:
 relative_assets = true
 
-
 require 'fileutils'
 on_stylesheet_saved do |file|
-  if File.exists?(file) && File.basename(file) == "styles.css"
+  if File.exists?(file) && File.basename(file) == "style.css"
     puts "Moving: #{file}"
     FileUtils.mv(file, File.dirname(file) + "/../" + File.basename(file))
   end
