@@ -1,3 +1,8 @@
+// Project configuration
+//var project   = 'example_theme';
+
+// Initialization sequence
+
 var gulp = require('gulp'),
     sass = require('gulp-ruby-sass'),
     compass = require('gulp-compass'),
@@ -12,20 +17,42 @@ var gulp = require('gulp'),
     notify = require('gulp-notify'),
     cache = require('gulp-cache'),
     livereload = require('gulp-livereload');
+    //build = './'+project+'/'
 
+
+
+
+// Styles
+/*gulp.task('styles', function() {
+  return gulp.src('sass/*.scss')
+  .pipe(plugins.rubySass({ style: 'expanded', compass: true }))
+  .pipe(plugins.autoprefixer('last 2 versions', 'ie 9', 'ios 6', 'android 4'))
+  .pipe(gulp.dest('assets/css'))
+  .pipe(plugins.minifyCss({ keepSpecialComments: 1 }))
+  .pipe(plugins.livereload(server))
+  .pipe(gulp.dest('./'))
+  .pipe(plugins.notify({ message: 'Styles task complete' }));
+});*/
+
+// Compile Our Sass
+/*gulp.task('styles', function() {
+    return gulp.src('sass/*.scss')
+        .pipe(sass())
+        .pipe(gulp.dest('assets/css'));
+});*/
 
 // Compile Sass using compass
 gulp.task('styles', function() {
-  return gulp.src('sass/main.sass')
+  return gulp.src('sass/style.scss')
     .pipe(compass({ config_file: './config.rb', css: 'css', sass: 'sass' }))
     .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-    .pipe(gulp.dest('assets/css'))
+    .pipe(gulp.dest(''))
+    .pipe(livereload())
     .pipe(rename({suffix: '.min'}))
-    .pipe(minifycss())
+    .pipe(minifycss({ keepSpecialComments: 1 }))
     .pipe(gulp.dest('assets/css'))
     .pipe(notify({ message: 'Styles task complete' }));
 });
-
 
 //Scripts
 gulp.task('scripts', function() {
@@ -68,7 +95,7 @@ gulp.task('default', ['clean'], function() {
 gulp.task('watch', function() {
 
   // Watch .scss files
-  gulp.watch('sass/*.sass', ['styles']);
+  gulp.watch('sass/*.scss', ['styles']);
 
   // Watch .js files
   gulp.watch('js/*.js', ['scripts']);
@@ -83,5 +110,8 @@ gulp.task('watch', function() {
   gulp.watch(['assets/**']).on('change', function(file) {
     server.changed(file.path);
   });
+
+  livereload.listen();
+  gulp.watch('sass/**').on('change', livereload.changed);
 
 });
