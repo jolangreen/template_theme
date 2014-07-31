@@ -20,30 +20,9 @@ var gulp = require('gulp'),
     //build = './'+project+'/'
 
 
-
-
-// Styles
-/*gulp.task('styles', function() {
-  return gulp.src('sass/*.scss')
-  .pipe(plugins.rubySass({ style: 'expanded', compass: true }))
-  .pipe(plugins.autoprefixer('last 2 versions', 'ie 9', 'ios 6', 'android 4'))
-  .pipe(gulp.dest('assets/css'))
-  .pipe(plugins.minifyCss({ keepSpecialComments: 1 }))
-  .pipe(plugins.livereload(server))
-  .pipe(gulp.dest('./'))
-  .pipe(plugins.notify({ message: 'Styles task complete' }));
-});*/
-
-// Compile Our Sass
-/*gulp.task('styles', function() {
-    return gulp.src('sass/*.scss')
-        .pipe(sass())
-        .pipe(gulp.dest('assets/css'));
-});*/
-
 // Compile Sass using compass
 gulp.task('styles', function() {
-  return gulp.src('sass/style.scss')
+  return gulp.src('sass/*.scss')
     .pipe(compass({ config_file: './config.rb', css: 'css', sass: 'sass' }))
     .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
     .pipe(gulp.dest(''))
@@ -95,7 +74,7 @@ gulp.task('default', ['clean'], function() {
 gulp.task('watch', function() {
 
   // Watch .scss files
-  gulp.watch('sass/*.scss', ['styles']);
+  gulp.watch('sass/*.sass', ['styles']);
 
   // Watch .js files
   gulp.watch('js/*.js', ['scripts']);
@@ -113,5 +92,7 @@ gulp.task('watch', function() {
 
   livereload.listen();
   gulp.watch('sass/**').on('change', livereload.changed);
+
+
 
 });
