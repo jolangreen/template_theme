@@ -33,6 +33,22 @@ gulp.task('styles', function() {
     .pipe(notify({ message: 'Styles task complete' }));
 });
 
+// sass task - 'Expanded' for local - 'lineNumbers' remove for production
+gulp.task('sass', function () {
+    gulp.src('static/assets/sass/*.sass')
+    .pipe(sass({
+        noCache: true,
+        compass: true,
+        style: "expanded",
+        lineNumbers: true,
+        loadPath: 'static/assets/css/*'
+    }))
+    .pipe(gulp.dest('static/assets/css'))
+    .pipe(notify({
+        message: "Your sass file was successfully compiled!"
+    }));;
+});
+
 //Scripts
 gulp.task('scripts', function() {
   return gulp.src('js/*.js')
