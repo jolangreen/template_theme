@@ -84,9 +84,9 @@ gulp.task('clean', function() {
     .pipe(clean());
 });
 
-//Automatically add bower dependencies
+//Automatically Add dependencies to your source code
 gulp.task('bower', function () {
-  gulp.src(['./header.php', './footer.php'])
+  gulp.src(['./header.php', './footer.php', './template-sample.html'])
     .pipe(wiredep({
       optional: 'configuration',
       goes: 'here'
