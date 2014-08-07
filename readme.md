@@ -14,22 +14,22 @@ $ yo wordpress
 4. Answer the list of Yeopress questions and download theme via git
 
 ```bash
-[?] WordPress URL: http://jolangreen.com/
-[?] Table prefix: wp_
+[?] WordPress URL: 'http://jolangreen.com/'
+[?] Table prefix: 'wp_'
 [?] Database host: 'localhost'
-[?] Database name: "jolan_testing"
-[?] Database user: [jolan_testing]
-[?] Database password: =1sDa0z4$Lvp
-[?] Use Git? Yes
-[?] Would you like to install WordPress as a submodule? No
-[?] Would you like to install WordPress with the custom directory structure? No
-[?] Install a custom theme? Yes
-[?] Destination directory: project_name
-[?] Theme source type (git/tar) git
-[?] GitHub username: jolangreen
-[?] GitHub repository name: template_theme
-[?] Repository branch: master
-[?] Does this all look correct? Yes
+[?] Database name: 'jolan_testing'
+[?] Database user: 'jolan_testing'
+[?] Database password: '=1sDa0z4$Lvp'
+[?] Use Git? 'Yes'
+[?] Would you like to install WordPress as a submodule? 'No'
+[?] Would you like to install WordPress with the custom directory structure? 'No'
+[?] Install a custom theme? 'Yes'
+[?] Destination directory: 'project_name'
+[?] Theme source type (git/tar) 'git'
+[?] GitHub username: 'jolangreen'
+[?] GitHub repository name: 'template_theme'
+[?] Repository branch: 'master'
+[?] Does this all look correct? 'Yes'
 ```
 
 5. Get dependencies using Bower
