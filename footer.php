@@ -13,8 +13,9 @@
     </div>
 </footer>
 
-<script src="<?php bloginfo('template_directory'); ?>/bower_components/js/dist/jquery.min.js"></script>
-<script src="<?php bloginfo('template_directory'); ?>/bower_components/js/bootstrap.min.js"></script>
+<!-- bower:js -->
+<!-- endbower -->
+
 <script src="<?php bloginfo('template_directory'); ?>/assets/js/scripts.js"></script>
 <script type="text/javascript">
     var s = skrollr.init();
