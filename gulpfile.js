@@ -22,7 +22,7 @@ var gulp = require('gulp'),
 
 // Compile Sass using compass
 gulp.task('styles', function() {
-   return gulp.src('sass/*.scss')
+   gulp.src('sass/*.scss')
      .pipe(compass({ config_file: './config.rb', css: 'css', sass: 'sass' }))
      .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
      .pipe(gulp.dest(''))
@@ -58,7 +58,7 @@ gulp.task('styles', function() {
 
 //Scripts
 gulp.task('scripts', function() {
-  return gulp.src(['bower_components/jquery/dist/jquery.min.js', 'bower_components/bootstrap/dist/js/bootstrap.min.js', 'js/*.js'])
+  gulp.src(['bower_components/jquery/dist/jquery.min.js', 'bower_components/bootstrap/dist/js/bootstrap.min.js', 'js/*.js'])
     //.pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter('default'))
     .pipe(concat('scripts.js'))
@@ -71,7 +71,7 @@ gulp.task('scripts', function() {
 
 //Images
 gulp.task('images', function() {
-  return gulp.src('images/**/*')
+  gulp.src('images/**/*')
     .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
     .pipe(gulp.dest('assets/images'))
     .pipe(notify({ message: 'Images task complete' }));
@@ -80,7 +80,7 @@ gulp.task('images', function() {
 
 // Clean. Delete and replace all files in the destination folder.
 gulp.task('clean', function() {
-  return gulp.src(['assets/css', 'assets/js', 'assets/images'], {read: false})
+  gulp.src(['assets/css', 'assets/js', 'assets/images'], {read: false})
     .pipe(clean());
 });
 
