@@ -16,8 +16,8 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     notify = require('gulp-notify'),
     cache = require('gulp-cache'),
-    livereload = require('gulp-livereload');
-    //build = './'+project+'/'
+    livereload = require('gulp-livereload'),
+    wiredep = require('wiredep').stream;
 
 
 // Compile Sass using compass
@@ -56,7 +56,6 @@ gulp.task('styles', function() {
         .pipe(gulp.dest('./dist/css'));
 });*/
 
-
 //Scripts
 gulp.task('scripts', function() {
   return gulp.src(['bower_components/jquery/dist/jquery.min.js', 'bower_components/bootstrap/dist/js/bootstrap.min.js', 'js/*.js'])
@@ -69,7 +68,6 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest('assets/js'))
     .pipe(notify({ message: 'Scripts task complete' }));
 });
-
 
 //Images
 gulp.task('images', function() {
@@ -84,6 +82,16 @@ gulp.task('images', function() {
 gulp.task('clean', function() {
   return gulp.src(['assets/css', 'assets/js', 'assets/images'], {read: false})
     .pipe(clean());
+});
+
+//Automatically add bower dependencies
+gulp.task('bower', function () {
+  gulp.src(['./header.php', './footer.php'])
+    .pipe(wiredep({
+      optional: 'configuration',
+      goes: 'here'
+    }))
+    .pipe(gulp.dest('./'));
 });
 
 
@@ -116,7 +124,6 @@ gulp.task('watch', function() {
 
   livereload.listen();
   gulp.watch('sass/**').on('change', livereload.changed);
-
 
 
 });
