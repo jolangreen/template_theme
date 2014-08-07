@@ -16,9 +16,9 @@ $ yo wordpress
 ```bash
 [?] WordPress URL: http://jolangreen.com/
 [?] Table prefix: wp_
-[?] Database host: localhost
-[?] Database name: jolan_testing
-[?] Database user: jolan_testing
+[?] Database host: 'localhost'
+[?] Database name: "jolan_testing"
+[?] Database user: [jolan_testing]
 [?] Database password: =1sDa0z4$Lvp
 [?] Use Git? Yes
 [?] Would you like to install WordPress as a submodule? No
