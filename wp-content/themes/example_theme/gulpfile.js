@@ -2,7 +2,7 @@
 //var project   = 'example_theme';
 
 // Initialization sequence
-
+//    
 var gulp = require('gulp'),
     sass = require('gulp-ruby-sass'),
     compass = require('gulp-compass'),
@@ -22,36 +22,44 @@ var gulp = require('gulp'),
 
 // Compile Sass using compass
 gulp.task('styles', function() {
-  return gulp.src('sass/*.scss')
-    .pipe(compass({ config_file: './config.rb', css: 'css', sass: 'sass' }))
-    .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-    .pipe(gulp.dest(''))
-    .pipe(livereload())
-    .pipe(rename({suffix: '.min'}))
-    .pipe(minifycss({ keepSpecialComments: 1 }))
-    .pipe(gulp.dest('assets/css'))
-    .pipe(notify({ message: 'Styles task complete' }));
-});
+   return gulp.src('sass/*.scss')
+     .pipe(compass({ config_file: './config.rb', css: 'css', sass: 'sass' }))
+     .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+     .pipe(gulp.dest(''))
+     .pipe(livereload())
+     .pipe(rename({suffix: '.min'}))
+     .pipe(minifycss({ keepSpecialComments: 1 }))
+     .pipe(gulp.dest('assets/css'))
+     .pipe(notify({ message: 'Styles task complete' }));
+ });
+
 
 // sass task - 'Expanded' for local - 'lineNumbers' remove for production
-gulp.task('sass', function () {
-    gulp.src('static/assets/sass/*.sass')
+/*gulp.task('styles', function () {
+    gulp.src('sass/*.scss')
     .pipe(sass({
         noCache: true,
         compass: true,
         style: "expanded",
         lineNumbers: true,
-        loadPath: 'static/assets/css/*'
+        loadPath: 'assets/css/*'
     }))
-    .pipe(gulp.dest('static/assets/css'))
+    .pipe(gulp.dest('assets/css'))
     .pipe(notify({
         message: "Your sass file was successfully compiled!"
     }));;
 });
+*/
+/*gulp.task('sass', function () {
+    gulp.src('./sass/*.scss')
+        .pipe(sass({ compass: true }))
+        .pipe(gulp.dest('./dist/css'));
+});*/
+
 
 //Scripts
 gulp.task('scripts', function() {
-  return gulp.src('js/*.js')
+  return gulp.src(['bower_components/jquery/dist/jquery.min.js', 'bower_components/bootstrap/dist/js/bootstrap.min.js', 'js/*.js'])
     //.pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter('default'))
     .pipe(concat('scripts.js'))
