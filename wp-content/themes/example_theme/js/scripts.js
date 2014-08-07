@@ -34,9 +34,11 @@ $(window).scroll(function() {
 
 
 //Full Height
+/*
 $(function(){
     $('.item') .css({'height': (($(window).height()))+'px'});
     $(window).resize(function(){
         $('.item') .css({'height': (($(window).height()))+'px'});
     });
 });
+*/
