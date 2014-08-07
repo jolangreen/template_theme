@@ -9,3 +9,15 @@ Install [Yeopress](http://wesleytodd.com/2013/5/yeopress-a-yeoman-generator-for-
 ```bash
 $ yo wordpress
 ```
+[wirdep](http://cameronspear.com/blog/streams-in-wiredep/)
+
+```html
+gulp.task('bower', function () {  
+  gulp.src('./src/footer.html')
+    .pipe(wiredep({
+      directory: './bower_componets/',
+      bowerJson: require('./bower.json'),
+    }))
+    .pipe(gulp.dest('./dest'));
+});
+```
