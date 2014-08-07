@@ -9,8 +9,8 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
-<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/bower_components/bootstrap/dist/css/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/parallax.css" data-skrollr-stylesheet />
+<!-- bower:css -->
+<!-- endbower -->
 
 <?php wp_head(); ?>
 </head>
