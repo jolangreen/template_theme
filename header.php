@@ -10,6 +10,8 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 <!-- bower:css -->
+<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+<link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.css" />
 <!-- endbower -->
 
 <?php wp_head(); ?>

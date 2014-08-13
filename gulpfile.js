@@ -21,7 +21,7 @@ var gulp = require('gulp'),
 
 
 // Compile Sass using compass
-gulp.task('styles', function() {
+/*gulp.task('styles', function() {
    gulp.src('sass/*.scss')
      .pipe(compass({ config_file: './config.rb', css: 'css', sass: 'sass' }))
      .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
@@ -32,10 +32,10 @@ gulp.task('styles', function() {
      .pipe(gulp.dest('assets/css'))
      .pipe(notify({ message: 'Styles task complete' }));
  });
-
+*/
 
 // sass task - 'Expanded' for local - 'lineNumbers' remove for production
-/*gulp.task('styles', function () {
+gulp.task('styles', function () {
     gulp.src('sass/*.scss')
     .pipe(sass({
         noCache: true,
@@ -49,7 +49,7 @@ gulp.task('styles', function() {
         message: "Your sass file was successfully compiled!"
     }));;
 });
-*/
+
 /*gulp.task('sass', function () {
     gulp.src('./sass/*.scss')
         .pipe(sass({ compass: true }))

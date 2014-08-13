@@ -4,10 +4,11 @@
   "description": "This is a test",
   "main": "gulpfile.js",
   "dependencies": {
+    "gulp": "^3.8.6",
     "gulp-autoprefixer": "^0.0.8",
     "gulp-ruby-sass": "^0.6.0",
     "gulp-sass": "^0.7.2",
-    "gulp": "^3.8.6"
+    "wiredep": "^1.8.2"
   },
   "devDependencies": {
     "gulp-autoprefixer": "0.0.8",
