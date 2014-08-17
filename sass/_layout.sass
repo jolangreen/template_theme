@@ -712,15 +712,29 @@ article table
         margin-left: -20px
         margin-right: -20px
 
+    .row
+        padding-left: 15px
+        padding-right: 15px
+
     nav
         float: none
+        .nav, .nav li
+            display: block
 
     .nav-collapse .navbar-form, .nav-collapse .navbar-search
         border-top: 1px solid $clrLight
         border-bottom: 1px solid $clrLight
 
+    .navbar-toggle .icon-bar
+        background: $clrBrightest
+        
     .navbar
         height: auto
+        .navbar-collapse
+            background: $clrMutedDark
+        
+        .pull-right
+            float: none !important
 
     .carousel
         margin-left: -20px
