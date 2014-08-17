@@ -20,7 +20,9 @@
 
 <script src="<?php bloginfo('template_directory'); ?>/assets/js/scripts.js"></script>
 <script type="text/javascript">
-    var s = skrollr.init();
+    if ($(window).width() > 960) {
+       var s = skrollr.init();
+    }
 </script>
 
 <?php wp_footer(); ?>
