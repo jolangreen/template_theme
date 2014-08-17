@@ -5,7 +5,7 @@
 ## Getting Started
 + Create WP database on server
 + Navigate to project directory "public_html" via terminal 
-+ Install [Yeopress](http://wesleytodd.com/2013/5/yeopress-a-yeoman-generator-for-wordpress.html)
++ Install [Yeopress](http://wesleytodd.com/2013/5/yeopress-a-yeoman-generator-for-wordpress.html) using:
 
 ```bash
 $ yo wordpress
@@ -32,7 +32,7 @@ $ yo wordpress
 [?] Does this all look correct? 'Yes'
 ```
 
-+ Get dependencies using Bower
++ Navigate to theme folder and get dependencies using Bower:
 
 ```bash
 $ bower install
@@ -41,7 +41,7 @@ $ bower install
 + NPM install all plugins for Gulp
 
 ```bash
-$ npm install gulp-ruby-sass gulp-compass gulp-autoprefixer gulp-minify-css gulp-jshint gulp-concat gulp-uglify gulp-imagemin gulp-clean gulp-notify gulp-rename gulp-livereload gulp-cache wiredep --save-dev
+$sudo npm install gulp gulp-ruby-sass gulp-compass gulp-autoprefixer gulp-minify-css gulp-jshint gulp-concat gulp-uglify gulp-imagemin gulp-clean gulp-notify gulp-rename gulp-livereload gulp-cache wiredep --save-dev
 ```
 
 + Watch files for updates
