@@ -640,23 +640,36 @@ article table
    ADVERTISING
    ========================================================================== */
 
-.ad-leaderboard
-    width: 728px
+.ad
     margin: 0 auto
+    background: #f1f1f1
+    border: 1px solid #fff
+    overflow: hidden
 
-@media (max-width: 768px)
-    .ad-leaderboard
-        display: none
-        width: 0
 
-    .ad-rectangle
-        margin: 0 auto
-        width: 300px
+.ad:after
+    content: "Advertise here"
+    font-size: 13px
+    text-align: center
+    width: 100%
+    display: block
 
-//anything above 768px show the following styles
-@media (min-width: 768px)
-    .ad-rectangle
-        display: none
+
+.ad.leaderboard:after 
+    line-height: 90px 
+
+.ad.medrectangle:after 
+    line-height: 250px 
+
+.leaderboard
+    width: 728px
+    height: 90px
+
+
+.medrectangle
+    width: 300px
+    height: 250px
+
 
 
 /* ==========================================================================
