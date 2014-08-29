@@ -1,7 +1,10 @@
+// https://github.com/bclozel/gulp-bower-src
+
 // Project configuration
 //var project   = 'example_theme';
 
 // Initialization sequence
+
 //    
 var gulp = require('gulp'),
     sass = require('gulp-ruby-sass'),
