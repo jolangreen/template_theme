@@ -20,11 +20,12 @@ var gulp = require('gulp'),
     notify = require('gulp-notify'),
     cache = require('gulp-cache'),
     livereload = require('gulp-livereload'),
+    mainBowerFiles = require('main-bower-files'),
     wiredep = require('wiredep').stream;
 
 
 // Compile Sass using compass
-/*gulp.task('styles', function() {
+gulp.task('styles', function() {
    gulp.src('sass/*.scss')
      .pipe(compass({ config_file: './config.rb', css: 'css', sass: 'sass' }))
      .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
@@ -35,8 +36,8 @@ var gulp = require('gulp'),
      .pipe(gulp.dest('assets/css'))
      .pipe(notify({ message: 'Styles task complete' }));
  });
-*/
 
+/*
 // sass task - 'Expanded' for local - 'lineNumbers' remove for production
 gulp.task('styles', function () {
     gulp.src('sass/*.scss')
@@ -52,7 +53,7 @@ gulp.task('styles', function () {
         message: "Your sass file was successfully compiled!"
     }));;
 });
-
+*/
 /*gulp.task('sass', function () {
     gulp.src('./sass/*.scss')
         .pipe(sass({ compass: true }))
@@ -97,6 +98,15 @@ gulp.task('bower', function () {
     .pipe(gulp.dest('./'));
 });
 
+//Take neccessary files from bower_components and move to 'assets'
+/*
+gulp.task('bowermove', function() {
+  return gulp.src(mainBowerFiles(), {
+      base: 'bower_components'
+    })
+    .pipe(gulp.dest('assets'));
+});
+*/
 
 
 // Default task
@@ -127,6 +137,5 @@ gulp.task('watch', function() {
 
   livereload.listen();
   gulp.watch('sass/**').on('change', livereload.changed);
-
 
 });
