@@ -20,7 +20,6 @@ var gulp = require('gulp'),
     notify = require('gulp-notify'),
     cache = require('gulp-cache'),
     livereload = require('gulp-livereload'),
-    mainBowerFiles = require('main-bower-files'),
     wiredep = require('wiredep').stream;
 
 
