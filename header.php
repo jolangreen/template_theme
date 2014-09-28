@@ -34,8 +34,8 @@
                 </button>
             </div>
             <div class="navbar-collapse collapse">
-               	<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu nav nav-bar' ) ); ?>
-                <?php get_search_form(); ?>
+               	<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav navbar-nav' ) ); ?>
+                <?php //get_search_form(); ?>
             </div>
         </div>
     </nav>
@@ -44,7 +44,7 @@
 <!-- Banner
 ================================================== -->
 <?php if(is_front_page()){ ?>
-<section class="banner">
+<section id="banner">
     <div id="myCarousel" class="carousel slide">
         <!-- <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -88,5 +88,4 @@
 
 <!-- Main Content
 ================================================== -->
-<section class="main">
-    <div class="container">        
+<section id="main">

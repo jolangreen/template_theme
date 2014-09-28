@@ -130,7 +130,7 @@ gulp.task('watch', function() {
   var server = livereload();
 
   // Watch any files in assets/, reload on change
-  gulp.watch(['assets/**']).on('change', function(file) {
+  gulp.watch(['assets/**', 'template-sample.html']).on('change', function(file) {
     server.changed(file.path);
   });
 

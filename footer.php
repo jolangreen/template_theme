@@ -1,5 +1,4 @@
 
-	</div><!-- /.container -->
 </section>
 <div class="clear"></div>
 
