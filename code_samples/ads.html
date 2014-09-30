@@ -1,0 +1,49 @@
+/*
+==========================================================================
+   ADVERTISING
+==========================================================================
+*/
+.ad {
+	margin: 0 auto;
+	background: #f1f1f1;
+	border: 1px solid #fff;
+	overflow: hidden;
+}
+
+.ad:after {
+	content: "Advertise here";
+	font-size: 13px;
+	text-align: center;
+	width: 100%;
+	display: block;
+}
+
+.ad.leaderboard:after { line-height: 90px; }
+.ad.medrectangle:after { line-height: 250px; }
+
+.leaderboard {
+	width: 728px;
+	height: 90px;
+}
+
+.medrectangle {
+	width: 300px;
+	height: 250px;
+}
+
+/* Fixed Ad */
+.fixed-adbox { position:fixed;bottom:20px;width:100%;text-align:center; z-index: 9999;}
+.adbox {width:728px;margin:0 auto;position:relative;bottom:-120px;}
+.close-this { cursor:pointer;position:absolute;z-index:999;right:0;top:0;background-color:#222;color:#fff !important;padding:5px;padding-top:2px;line-height:1;}
+
+HTML
+<div class="fixed-adbox">
+  <div class="adbox">
+    <a class="close-this">x</a>
+    <div id="azk00000"></div>
+  </div>
+</div>
+
+JAVASCRIPT
+<!-- Popup Ad -->
+<script>jQuery(document).ready(function($){$('.adbox').animate({bottom: '-10px'});$('.close-this').click(function(){$('.adbox').animate({bottom: '-120px'});});});</script>
