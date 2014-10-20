@@ -22,18 +22,13 @@ var gulp = require('gulp'),
     livereload = require('gulp-livereload');
 
 
-// Compile Sass using compass
-gulp.task('styles', function() {
-   gulp.src('sass/*.scss')
-     .pipe(compass({ config_file: './config.rb', css: 'assets/css', sass: 'sass' }))
-     .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-     .pipe(gulp.dest('assets/css'))
-     .pipe(livereload())
-     .pipe(rename({suffix: '.min'}))
-     .pipe(minifycss({ keepSpecialComments: 1 }))
-     .pipe(gulp.dest('assets/css'))
-     .pipe(notify({ message: 'Styles task complete' }));
- });
+//Images
+gulp.task('images', function() {
+    gulp.src('images/**/*')
+    .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
+    .pipe(gulp.dest('assets/images'))
+    .pipe(notify({ message: 'Images task complete' }));
+});
 
 
 //Scripts
@@ -49,13 +44,19 @@ gulp.task('scripts', function() {
     .pipe(notify({ message: 'Scripts task complete' }));
 });
 
-//Images
-gulp.task('images', function() {
-    gulp.src('images/**/*')
-    .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
-    .pipe(gulp.dest('assets/images'))
-    .pipe(notify({ message: 'Images task complete' }));
-});
+
+// Compile Sass using compass
+gulp.task('styles', function() {
+   gulp.src('sass/*.scss')
+     .pipe(compass({ config_file: './config.rb', css: '', sass: 'sass' }))
+     .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+     .pipe(livereload())
+     .pipe(rename({suffix: '.min'}))
+     .pipe(minifycss({ keepSpecialComments: 1 }))
+     .pipe(gulp.dest('assets/css'))
+     .pipe(notify({ message: 'Styles task complete' }));
+ });
+
 
 //Move 'bower_components' styles to 'assets'
 gulp.task('bowerstyles', function() {
@@ -72,7 +73,7 @@ gulp.task('bowerfonts', function() {
 
 // Clean. Delete and replace all files in the destination folder.
 gulp.task('clean', function() {
-  gulp.src(['assets/css', 'assets/js', 'assets/images'], {read: false})
+  gulp.src(['assets/css', 'assets/js', 'assets/images', 'assets/fonts'], {read: false})
     .pipe(clean());
 });
 
@@ -80,7 +81,7 @@ gulp.task('clean', function() {
 
 // Default task
 gulp.task('default', ['clean'], function() {
-    gulp.start('styles', 'scripts', 'images');
+    gulp.start('images', 'scripts',  'styles', 'bowerstyles', 'bowerfonts');
 });
 
 
