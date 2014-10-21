@@ -5,7 +5,7 @@ Template Name: Home Page
 ?>
 <?php get_header(); ?>
 
-    <div class="container">
+    <section class="content-section">
         <div class="row">
     		<div class="primary col-md-8">
                 <?php while ( have_posts() ) : the_post(); ?>
@@ -20,6 +20,6 @@ Template Name: Home Page
                 <?php get_sidebar(); ?>
             </div><!-- .secondary -->
         </div><!-- /.row -->
-    </div><!-- /.container -->
+    </section>
 
 <?php get_footer(); ?>
