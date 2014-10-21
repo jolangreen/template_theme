@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 
-		<div class="container">
+<section>
+	<div class="container">
           	<div class="row">
 				<div class="primary col-md-8">
 					<?php if ( have_posts() ) : ?>
@@ -23,5 +24,6 @@
 			    </div><!-- .secondary -->
 			</div><!-- /.row -->
         </div><!-- /.container -->
+</section>
 
 <?php get_footer(); ?>
