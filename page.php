@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 
-        <div class="container">
+        <section>
             <div class="row">
-        		<div class="primary col-md-8">
+                <div class="primary col-md-8">
                     <?php while ( have_posts() ) : the_post(); ?>
                         <article>
         	                <h2><?php the_title(); ?></h2>
@@ -15,6 +15,6 @@
                     <?php get_sidebar(); ?>
                 </div><!-- .secondary -->
             </div><!-- /.row -->
-        </div><!-- /.container -->
+        </section><!-- /.container -->
 
 <?php get_footer(); ?>
