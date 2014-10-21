@@ -8,7 +8,7 @@ Template Name: Home Page
 
 <!-- Banner
 ================================================== -->
-    <?php if(is_front_page()){ ?>
+
     <section id="banner">
         <div id="myCarousel" class="carousel slide">
             <!-- <ol class="carousel-indicators">
@@ -34,22 +34,6 @@ Template Name: Home Page
             </a>
         </div>
     </section>
-    <?php } else { ?>
-    <section class="page-intro">
-        <div class="tint">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h1>Page Title</h1>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="breadcrumb"><a href="<?php echo home_url( '/' ); ?>">Home</a> / <span class="active">About</span></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <?php } ?>
 
     <section class="content-section">
         <div class="row">
