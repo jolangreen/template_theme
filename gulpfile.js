@@ -106,7 +106,7 @@ gulp.task('watch', function() {
   });
 
   livereload.listen();
-  gulp.watch('sass/**', 'assets/css/*', 'assets/js/*').on('change', livereload.changed);
+  gulp.watch('sass/**').on('change', livereload.changed);
 
 });
 
