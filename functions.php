@@ -601,7 +601,7 @@ add_action( 'customize_preview_init', 'twentythirteen_customize_preview_js' );
         // This theme uses post thumbnails
         add_theme_support( 'post-thumbnails' );
         add_image_size( 'small-thumb', 290, 194, true ); // Small Thumbnail
-        add_image_size( 'medium-thumb', 380, 440, true ); // Medium Thumbnail
+        add_image_size( 'medium-thumb', 380, 440, array(center, center) ); // Medium Thumbnail
         add_image_size( 'large-thumb', 600, 380, true ); // Large Thumbnail
 
     }
