@@ -41,7 +41,7 @@ $ bower install
 + NPM install all plugins for Gulp
 
 ```bash
-$sudo npm install gulp gulp-ruby-sass gulp-compass gulp-autoprefixer gulp-minify-css gulp-jshint gulp-concat gulp-uglify gulp-imagemin gulp-clean gulp-notify gulp-rename gulp-livereload gulp-cache wiredep --save-dev
+$sudo npm install gulp gulp-ruby-sass gulp-compass gulp-autoprefixer gulp-minify-css gulp-jshint gulp-concat gulp-uglify gulp-imagemin gulp-clean gulp-notify gulp-rename gulp-livereload gulp-cache --save-dev
 ```
 
 + Watch files for updates
