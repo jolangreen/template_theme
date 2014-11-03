@@ -41,7 +41,12 @@ $ bower install
 + NPM install all plugins for Gulp
 
 ```bash
-$sudo npm install gulp gulp-ruby-sass gulp-compass gulp-autoprefixer gulp-minify-css gulp-jshint gulp-concat gulp-uglify gulp-imagemin gulp-clean gulp-notify gulp-rename gulp-livereload gulp-cache --save-dev
+$sudo npm install gulp gulp-compass gulp-autoprefixer gulp-minify-css gulp-concat gulp-uglify gulp-imagemin gulp-clean gulp-notify gulp-rename gulp-livereload --save-dev
+```
+
++ Run Gulp
+```bash
+$ gulp
 ```
 
 + Watch files for updates
@@ -51,18 +56,3 @@ $ gulp watch
 
 + Connect live reload (on browser)
 
-
-## Wiredep
-
-[wirdep](http://cameronspear.com/blog/streams-in-wiredep/)
-
-```html
-gulp.task('bower', function () {  
-  gulp.src('./src/footer.html')
-    .pipe(wiredep({
-      directory: './bower_componets/',
-      bowerJson: require('./bower.json'),
-    }))
-    .pipe(gulp.dest('./dest'));
-});
-```
