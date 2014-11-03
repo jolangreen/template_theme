@@ -7,18 +7,15 @@
 
 //
 var gulp = require('gulp'),
-    sass = require('gulp-ruby-sass'),
     compass = require('gulp-compass'),
     autoprefixer = require('gulp-autoprefixer'),
     minifycss = require('gulp-minify-css'),
-    jshint = require('gulp-jshint'),
     uglify = require('gulp-uglify'),
     imagemin = require('gulp-imagemin'),
     rename = require('gulp-rename'),
     clean = require('gulp-clean'),
     concat = require('gulp-concat'),
     notify = require('gulp-notify'),
-    cache = require('gulp-cache'),
     livereload = require('gulp-livereload');
 
 
@@ -35,7 +32,7 @@ gulp.task('images', function() {
 gulp.task('scripts', function() {
     gulp.src(['bower_components/jquery/dist/jquery.min.js', 'bower_components/bootstrap/dist/js/bootstrap.min.js', 'js/*.js'])
     //.pipe(jshint('.jshintrc'))
-    .pipe(jshint.reporter('default'))
+    //.pipe(jshint.reporter('default'))
     .pipe(concat('scripts.js'))
     .pipe(gulp.dest('assets/js'))
     .pipe(rename({suffix: '.min'}))
