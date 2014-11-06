@@ -590,7 +590,7 @@ add_action( 'customize_preview_init', 'twentythirteen_customize_preview_js' );
 
 //Add Favicon to Wordpress Backend
 	function pa_admin_area_favicon() {
-	$favicon_url = get_bloginfo('url') . '/wp-content/themes/example_theme/favicon.ico';  
+	$favicon_url = get_bloginfo('url') . '/wp-content/themes/UntitledCompany/favicon.ico';  
 	echo '<link rel="shortcut icon" href="' . $favicon_url . '" />';
 	}
 	add_action('admin_head', 'pa_admin_area_favicon');
