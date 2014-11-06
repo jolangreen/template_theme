@@ -25,7 +25,7 @@ $clrDarkest: #111;
 $fontPrimary: 'robotoregular', Arial, Helvetica, Sans-serif;
 $fontSecondary: 'HelveticaNeueThin', Arial, Helvetica, Sans-serif;
 
-@mixin position($pos, $top, $right, $bottom, $left) {
+@mixin position($pos: absolute, $top, $right, $bottom, $left) {
     position: $pos;
     top: $top;
     right: $right;
