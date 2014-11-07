@@ -7,7 +7,7 @@
     <div class="container">
         <?php wp_nav_menu( array('menu' => 'footer', 'after' => '' )); ?>
         <div class="text-muted">
-            &copy; <?=date('Y')?> UntitledCompany. All Rights Reserved.
+            &copy; <?php echo date( "Y" ); ?> UntitledCompany. All Rights Reserved.
         </div>
     </div>
 </footer>
