@@ -61,5 +61,5 @@ $ gulp watch
 + [All-in-one-SEO](https://wordpress.org/plugins/all-in-one-seo-pack/)
 + [Contact Form 7](https://wordpress.org/plugins/contact-form-7/)
 + [Custom Post Type UI](https://wordpress.org/plugins/custom-post-type-ui/)
-+ [si-contact-form](https://wordpress.org/plugins/si-contact-form/)
-+ [ultimate-maintenance-mode](https://wordpress.org/plugins/ultimate-maintenance-mode/)
++ [Fast Secure Contact Form](https://wordpress.org/plugins/si-contact-form/)
++ [Ultimate Maintenance Mode](https://wordpress.org/plugins/ultimate-maintenance-mode/)
