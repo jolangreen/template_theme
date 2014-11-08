@@ -56,3 +56,10 @@ $ gulp watch
 
 + Connect live reload (on browser)
 
+## Common Plugins
+[Advanced Custom Fields](http://www.advancedcustomfields.com)
+[All-in-one-SEO](https://wordpress.org/plugins/all-in-one-seo-pack/)
+[Contact Form 7](https://wordpress.org/plugins/contact-form-7/)
+[Custom Post Type UI](https://wordpress.org/plugins/custom-post-type-ui/)
+[si-contact-form](https://wordpress.org/plugins/si-contact-form/)
+[ultimate-maintenance-mode](https://wordpress.org/plugins/ultimate-maintenance-mode/)
