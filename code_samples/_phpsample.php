@@ -57,7 +57,16 @@
   </ul>
 <?php } ?>
 
+<!-- Query Post -->
+        <?php
+        // Start the Loop.
+        $args = array( 'category_name' => 'featured', 'posts_per_page' => 3 );
+        $loop = new WP_Query( $args );
+        while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
+        <?php endwhile; ?>
+        
+        
 <!-- Emmet -->
 div.container>div.row>div.col-md-
 
