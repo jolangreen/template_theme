@@ -63,3 +63,4 @@ $ gulp watch
 + [Custom Post Type UI](https://wordpress.org/plugins/custom-post-type-ui/)
 + [Fast Secure Contact Form](https://wordpress.org/plugins/si-contact-form/)
 + [Ultimate Maintenance Mode](https://wordpress.org/plugins/ultimate-maintenance-mode/)
++ [Ultimate Post Widget](https://wordpress.org/plugins/ultimate-posts-widget/)
