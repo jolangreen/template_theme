@@ -84,3 +84,20 @@ div.container>div.row>div.col-md-
 <![endif]-->
 
 http://stackoverflow.com/questions/23213296/why-does-sublime-text-editor-3-autocomplete-when-i-press-return
+
+
+
+<?php echo get_the_term_list( $post->ID, 'genre', ' ', ', ', '' ); ?>
+<?php the_tags('<span>Actors: </span>') ?>
+<?php if( function_exists('the_views')) { the_views(); } ?>  </div>
+<?php if( function_exists('zilla_likes')) {zilla_likes(); }?>
+
+<?php the_category(', ') ?>
+
+<?php $counter = 0 ?>
+<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+<?php $counter++ ?>
+<?php echo ($counter % 4 === 0 ? '<div class="row">' : null) ?>
+
+<?php echo ($counter % 4 === 0 ? '</div>' : null) ?>
+<?php endwhile; ?>
