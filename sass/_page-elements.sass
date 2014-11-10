@@ -277,7 +277,12 @@ article table
 .pagination .page-numbers.current
     background: $clrSecondary
     color: $clrBrightest
-
+    
+nav.post-navigation
+    +border(top, #ccc)
+    padding-top: 20px
+    height: 80px
+    
 nav .navigation
     border-top: 1px solid $clrBright
     padding-top: 25px
@@ -288,6 +293,8 @@ nav .nav-links a
     background: $clrSecondary
     padding: 2px 8px
     +border-radius(4px)
+    &:first-child
+        float: left !important
     &:last-child
         float: right
 
