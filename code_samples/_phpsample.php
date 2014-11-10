@@ -101,3 +101,8 @@ http://stackoverflow.com/questions/23213296/why-does-sublime-text-editor-3-autoc
 
 <?php echo ($counter % 4 === 0 ? '</div>' : null) ?>
 <?php endwhile; ?>
+
+OR
+
+<?php if($counter == 3){ echo '<div class="row">'; }?>
+<?php if($counter == 3){ echo '</div>'; }?>
