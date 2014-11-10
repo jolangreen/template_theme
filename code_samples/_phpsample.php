@@ -111,3 +111,7 @@ OR
 http://prettycoolwebsites.com
 User : admin
 Pass : ZYR6LYScb
+
+
+find . -type f -name '._*' -delete
+find . -type f -name '.DS*' -delete
