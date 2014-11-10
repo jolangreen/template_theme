@@ -106,3 +106,8 @@ OR
 
 <?php if($counter == 3){ echo '<div class="row">'; }?>
 <?php if($counter == 3){ echo '</div>'; }?>
+
+
+http://prettycoolwebsites.com
+User : admin
+Pass : ZYR6LYScb
