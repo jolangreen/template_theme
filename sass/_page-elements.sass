@@ -48,30 +48,29 @@ form
         &:hover
             background-color: $clrSecondary
 
-form#contactform
-    .form-group label
-        text-align: right
+//Search Form
+form.search-form 
+    label
+        display: inline
 
-    fieldset
-        margin-bottom: 50px
+    .screen-reader-text
+        display: none
 
-    input[type="text"].ng-invalid.ng-dirty, input[type="email"].ng-invalid.ng-dirty
-        border: 1px solid red !important
-
-    .form-group span
+    input.search-field
+        border: none
+        background: #f2f2f2
+        +border-radius(4px)
+        color: #616161
         font-size: 12px
-        margin-top: -10px
-        display: block
-        color: red
-        position: absolute
+        padding: 13px 22px
+        width: 60%
 
-    input[required]
-        background: image-url("required-field.jpg") no-repeat top right
-
-    input[disabled="disabled"]
-        background: #ccc
-        cursor: default
-        
+    input[type="submit"]
+        padding: 11px 16px
+        font-size: 14px
+        height: auto
+        background: $clrPrimary
+       
         
         
 /* ==========================================================================
@@ -256,16 +255,9 @@ article table
     border-bottom: 1px solid $clrBright
     margin-bottom: 30px
 
-#nav-single
-    border-top: 1px solid $clrBright
-    padding: 25px 0
-
-nav .nav-links a
-    color: $clrPrimary
+.comment-list footer
+    background: transparent
     
-.nav-next
-    float: right
-
 .textwidget
     padding: 10px
 
@@ -280,6 +272,19 @@ nav .nav-links a
 .pagination .page-numbers.current
     background: $clrSecondary
     color: $clrBrightest
+
+nav .navigation
+    border-top: 1px solid $clrBright
+    padding-top: 25px
+
+nav .nav-links a
+    display: inline-block
+    color: $clrBrightest
+    background: $clrSecondary
+    padding: 2px 8px
+    +border-radius(4px)
+    &:last-child
+        float: right
 
 /* ==========================================================================
    ADVERTISING
