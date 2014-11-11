@@ -21,7 +21,7 @@ var gulp = require('gulp'),
 
 //Images
 gulp.task('images', function() {
-    gulp.src('images/**/*')
+    return gulp.src('images/**/*')
     .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
     .pipe(gulp.dest('assets/images'))
     .pipe(notify({ message: 'Images task complete' }));
@@ -30,7 +30,7 @@ gulp.task('images', function() {
 
 //Scripts
 gulp.task('scripts', function() {
-    gulp.src(['bower_components/jquery/dist/jquery.min.js', 'bower_components/bootstrap/dist/js/bootstrap.min.js', 'js/*.js'])
+    return gulp.src(['bower_components/jquery/dist/jquery.min.js', 'bower_components/bootstrap/dist/js/bootstrap.min.js', 'js/*.js'])
     //.pipe(jshint('.jshintrc'))
     //.pipe(jshint.reporter('default'))
     .pipe(concat('scripts.js'))
@@ -44,7 +44,7 @@ gulp.task('scripts', function() {
 
 // Compile Sass using compass
 gulp.task('styles', function() {
-   gulp.src('sass/*.scss')
+   return gulp.src('sass/*.scss')
      .pipe(compass({ config_file: './config.rb', css: '', sass: 'sass' }))
      .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
      .pipe(livereload())
@@ -57,20 +57,20 @@ gulp.task('styles', function() {
 
 //Move 'bower_components' styles to 'assets'
 gulp.task('bowerstyles', function() {
-    gulp.src(['./bower_components/bootstrap/dist/css/bootstrap.css', './bower_components/fontawesome/css/font-awesome.css'])
+    return gulp.src(['./bower_components/bootstrap/dist/css/bootstrap.css', './bower_components/fontawesome/css/font-awesome.css'])
     .pipe(gulp.dest('./assets/css'));
 });
 
 //Move 'bower_components' fonts to 'assets'
 gulp.task('bowerfonts', function() {
-    gulp.src(['./bower_components/bootstrap/dist/fonts/**/*.{ttf,woff,eot,svg,otf}', './bower_components/fontawesome/fonts/**/*.{ttf,woff,eot,svg,otf}', './fonts/**/*.{ttf,woff,eot,svg,otf}'])
+    return gulp.src(['./bower_components/bootstrap/dist/fonts/**/*.{ttf,woff,eot,svg,otf}', './bower_components/fontawesome/fonts/**/*.{ttf,woff,eot,svg,otf}', './fonts/**/*.{ttf,woff,eot,svg,otf}'])
     .pipe(gulp.dest('./assets/fonts'));
 });
 
 
 // Clean. Delete and replace all files in the destination folder.
 gulp.task('clean', function() {
-  gulp.src(['assets/css', 'assets/js', 'assets/images', 'assets/fonts'], {read: false})
+  return gulp.src(['assets/css', 'assets/js', 'assets/images', 'assets/fonts'], {read: false})
     .pipe(clean());
 });
 
