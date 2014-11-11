@@ -6,6 +6,9 @@
 
 <?php the_post_thumbnail('large-thumb'); ?>
 
+<?php the_category(', ') ?>
+<?php the_tags('<span>Tags: </span>') ?>
+
 <!-- If specific page... -->
 <?php if(is_page('home')){ ?>
 <?php } elseif(is_page('services') OR $post->post_parent == '14' ): { ?>
@@ -88,11 +91,10 @@ http://stackoverflow.com/questions/23213296/why-does-sublime-text-editor-3-autoc
 
 
 <?php echo get_the_term_list( $post->ID, 'genre', ' ', ', ', '' ); ?>
-<?php the_tags('<span>Actors: </span>') ?>
+
 <?php if( function_exists('the_views')) { the_views(); } ?>  </div>
 <?php if( function_exists('zilla_likes')) {zilla_likes(); }?>
 
-<?php the_category(', ') ?>
 
 <?php $counter = 0 ?>
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -106,6 +108,24 @@ OR
 
 <?php if($counter == 3){ echo '<div class="row">'; }?>
 <?php if($counter == 3){ echo '</div>'; }?>
+
+//New
+<div class="row">
+                <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+
+                  <article class="col-md-6" id="post-<?php the_ID(); ?>" role="article">
+
+                  <!-- loop content -->
+
+
+                  </article>
+                <?php $counter++;
+                  if ($counter % 2 == 0) {
+                  echo '</div><div class="row">';
+                }
+                endwhile; endif; ?>
+          </div><!-- /row -->
+
 
 
 http://prettycoolwebsites.com
