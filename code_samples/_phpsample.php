@@ -68,10 +68,22 @@
         while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
         <?php endwhile; ?>
-        
-        
-<!-- Emmet -->
-div.container>div.row>div.col-md-
+
+<!-- Repeat row class after every 3 -->        
+<div class="row">
+    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+
+      <article class="col-md-4">
+
+      <!-- loop content -->
+
+      </article>
+    <?php $counter++;
+      if ($counter % 3 == 0) {
+      echo '</div><div class="row">';
+    }
+    endwhile; endif; ?>
+</div><!-- /row -->
 
 
 /* icon list
@@ -81,51 +93,7 @@ div.container>div.row>div.col-md-
 /     margin: 0 5px 0 -15px
 
 
-<!-- Pulled from http://code.google.com/p/html5shiv/ -->
-<!--[if lt IE 9]>
-  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-
 http://stackoverflow.com/questions/23213296/why-does-sublime-text-editor-3-autocomplete-when-i-press-return
-
-
-
-<?php echo get_the_term_list( $post->ID, 'genre', ' ', ', ', '' ); ?>
-
-<?php if( function_exists('the_views')) { the_views(); } ?>  </div>
-<?php if( function_exists('zilla_likes')) {zilla_likes(); }?>
-
-
-<?php $counter = 0 ?>
-<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-<?php $counter++ ?>
-<?php echo ($counter % 4 === 0 ? '<div class="row">' : null) ?>
-
-<?php echo ($counter % 4 === 0 ? '</div>' : null) ?>
-<?php endwhile; ?>
-
-OR
-
-<?php if($counter == 3){ echo '<div class="row">'; }?>
-<?php if($counter == 3){ echo '</div>'; }?>
-
-//New
-<div class="row">
-                <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
-                  <article class="col-md-6" id="post-<?php the_ID(); ?>" role="article">
-
-                  <!-- loop content -->
-
-
-                  </article>
-                <?php $counter++;
-                  if ($counter % 2 == 0) {
-                  echo '</div><div class="row">';
-                }
-                endwhile; endif; ?>
-          </div><!-- /row -->
-
 
 
 http://prettycoolwebsites.com
