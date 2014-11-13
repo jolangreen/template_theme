@@ -1,22 +1,17 @@
-// https://github.com/bclozel/gulp-bower-src
-
-// Project configuration
-//var project   = 'example_theme';
 
 // Initialization sequence
 
-//
 var gulp = require('gulp'),
-    compass = require('gulp-compass'),
     autoprefixer = require('gulp-autoprefixer'),
-    minifycss = require('gulp-minify-css'),
-    uglify = require('gulp-uglify'),
-    imagemin = require('gulp-imagemin'),
-    rename = require('gulp-rename'),
     clean = require('gulp-clean'),
+    compass = require('gulp-compass'),
     concat = require('gulp-concat'),
+    imagemin = require('gulp-imagemin'),
+    livereload = require('gulp-livereload'),
+    minifycss = require('gulp-minify-css'),
     notify = require('gulp-notify'),
-    livereload = require('gulp-livereload');
+    rename = require('gulp-rename'),
+    uglify = require('gulp-uglify');
 
 
 //Images
