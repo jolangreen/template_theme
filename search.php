@@ -1,23 +1,29 @@
 <?php get_header(); ?>
 
-	<div class="primary col-md-8">
+	<section>
+		<div class="container">
+          	<div class="row">
+				<div class="primary col-md-8">
 
-		<?php if ( have_posts() ) : ?>
+					<?php if ( have_posts() ) : ?>
 
-			<h2 class="page-title"><?php printf( __( 'Search Results for: %s', 'twentythirteen' ), get_search_query() ); ?></h2>
-			
-			<?php while ( have_posts() ) : the_post(); ?>
-				<?php get_template_part( 'content', get_post_format() ); ?>
-			<?php endwhile; ?>
+						<h2 class="page-title"><?php printf( __( 'Search Results for: %s', 'twentythirteen' ), get_search_query() ); ?></h2>
 
-			<?php twentythirteen_paging_nav(); ?>
+						<?php while ( have_posts() ) : the_post(); ?>
+							<?php get_template_part( 'content', get_post_format() ); ?>
+						<?php endwhile; ?>
 
-		<?php else : ?>
-			<?php get_template_part( 'content', 'none' ); ?>
-		<?php endif; ?>
+						<?php twentythirteen_paging_nav(); ?>
 
-		</div><!-- .primary -->
-        <div class="secondary col-md-4">
-            <?php get_sidebar(); ?>
-        </div><!-- .secondary -->
+					<?php else : ?>
+						<?php get_template_part( 'content', 'none' ); ?>
+					<?php endif; ?>
+
+				</div><!-- .primary -->
+		        <div class="secondary col-md-4">
+		            <?php get_sidebar(); ?>
+		        </div><!-- .secondary -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section>
 <?php get_footer(); ?>
