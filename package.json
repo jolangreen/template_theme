@@ -1,7 +1,7 @@
 {
-  "name": "template_theme",
+  "name": "UntitledCompany",
   "version": "0.0.0",
-  "description": "This is a test",
+  "description": "This is the package",
   "main": "gulpfile.js",
   "dependencies": {
     "gulp": "^3.8.6",
