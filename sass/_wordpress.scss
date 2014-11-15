@@ -2,61 +2,6 @@
    Wordpress CSS
    ========================================================================== */
 
-/* WYSIWYG Alignment */
-.alignleft {
-    display: inline;
-    float: left;
-    margin-right: 1.625em;
-}
-.alignright {
-    display: inline;
-    float: right;
-    margin-left: 1.625em;
-}
-.aligncenter {
-    clear: both;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-img.alignleft,
-img.alignright,
-img.aligncenter {
-    margin-bottom: 1.625em;
-}
-
-/* Comments link */
-.entry-header {position:relative;}
-.entry-header .comments-link a {
-    background: #eee url(images/comment-bubble.png) no-repeat;
-    color: #666;
-    font-size: 13px;
-    font-weight: normal;
-    line-height: 35px;
-    overflow: hidden;
-    padding: 0 0 0;
-    position: absolute;
-    top: 0em;
-    right: 0;
-    text-align: center;
-    text-decoration: none;
-    width: 43px;
-    height: 36px;
-}
-.entry-header .comments-link a:hover,
-.entry-header .comments-link a:focus,
-.entry-header .comments-link a:active {
-    background-color: #1982d1;
-    color: #fff;
-    color: rgba(255,255,255,0.8);
-}
-.entry-header .comments-link .leave-reply {
-    visibility: hidden;
-}
-
-
-
 /*--------
 Comment Reply
 ---------*/
@@ -118,9 +63,7 @@ Comment Reply
     font-style: normal;
 }
 .comment-meta {
-    color: #666;
-    font-size: 12px;
-    line-height: 2.2em;
+    line-height: 1.5em;
 }
 .commentlist .children li.comment .comment-meta {
     line-height: 1.625em;
@@ -153,7 +96,7 @@ Comment Reply
     top: 0;
 }
 .commentlist > li:before {
-    content: url(images/comment-arrow.png);
+    content: url(assets/images/comment-arrow.png);
     left: -21px;
     position: absolute;
 }
@@ -198,15 +141,15 @@ a.comment-reply-link > span {
 Comment Form
 ---------*/
 #comments {
-    margin-top:20px;
+    margin-top: 20px;
+    border-top: 1px solid #d3d3d3;
+    margin: 1.625em auto;
+    padding: 1.625em;
 }
 
 #respond {
-    border-top: 1px solid #d3d3d3;
     -moz-border-radius: 3px;
     border-radius: 3px;
-    margin: 0 auto 1.625em;
-    padding: 1.625em;
     position: relative;
     width: 100%;
 }
@@ -215,7 +158,7 @@ Comment Form
 #respond input[type="url"],
 #respond textarea {
     background: #fff;
-    border: 1px solid #E6E9EF;
+    border: 1px solid #E5E5E5;
     -moz-border-radius: 5px;
     border-radius: 5px;
     position: relative;
@@ -282,9 +225,7 @@ Comment Form
     border: none;
     -moz-border-radius: 3px;
     border-radius: 3px;
-    -webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.3);
-    -moz-box-shadow: 0px 1px 2px rgba(0,0,0,0.3);
-    box-shadow: 0px 1px 2px rgba(0,0,0,0.3);
+    box-shadow: none
     color: #fff;
     cursor: pointer;
     font-size: 15px;
@@ -347,4 +288,59 @@ p.comment-form-comment {
 }
 .form-allowed-tags {
     display: none;
+}
+
+
+
+/* WYSIWYG Alignment */
+.alignleft {
+    display: inline;
+    float: left;
+    margin-right: 1.625em;
+}
+.alignright {
+    display: inline;
+    float: right;
+    margin-left: 1.625em;
+}
+.aligncenter {
+    clear: both;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img.alignleft,
+img.alignright,
+img.aligncenter {
+    margin-bottom: 1.625em;
+}
+
+/* Comments link */
+.entry-header {position:relative;}
+.entry-header .comments-link a {
+    background: #eee url(assets/images/comment-bubble.png) no-repeat;
+    color: #666;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 35px;
+    overflow: hidden;
+    padding: 0 0 0;
+    position: absolute;
+    top: 0em;
+    right: 0;
+    text-align: center;
+    text-decoration: none;
+    width: 43px;
+    height: 36px;
+}
+.entry-header .comments-link a:hover,
+.entry-header .comments-link a:focus,
+.entry-header .comments-link a:active {
+    background-color: #1982d1;
+    color: #fff;
+    color: rgba(255,255,255,0.8);
+}
+.entry-header .comments-link .leave-reply {
+    visibility: hidden;
 }
