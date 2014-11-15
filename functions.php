@@ -556,7 +556,7 @@ add_action( 'customize_preview_init', 'twentythirteen_customize_preview_js' );
 	    return 20;
 	}
 
-	// Create the Custom Excerpts callback
+// Create the Custom Excerpts callback
 	function html5wp_excerpt($length_callback='', $more_callback='') {
 	    global $post;
 	    if(function_exists($length_callback)){
@@ -572,7 +572,7 @@ add_action( 'customize_preview_init', 'twentythirteen_customize_preview_js' );
 	    echo $output;
 	}
 
-	// Pagination
+// Pagination
 	function html5wp_pagination() {
         global $wp_query;
         $big = 999999999;
@@ -588,6 +588,10 @@ add_action( 'customize_preview_init', 'twentythirteen_customize_preview_js' );
    add_action( 'init', 'html5wp_pagination' ); // Add our HTML5 Pagination
 
 
+//Custom Comments Template
+	include 'comment-template.php';
+	
+
 //Add Favicon to Wordpress Backend
 	function pa_admin_area_favicon() {
 	$favicon_url = get_bloginfo('url') . '/wp-content/themes/UntitledCompany/favicon.ico';  
@@ -600,19 +604,11 @@ add_action( 'customize_preview_init', 'twentythirteen_customize_preview_js' );
     if( function_exists( 'add_theme_support' ) ) {
         // This theme uses post thumbnails
         add_theme_support( 'post-thumbnails' );
-        add_image_size( 'small-thumb', 290, 194, true ); // Small Thumbnail
-        add_image_size( 'medium-thumb', 380, 440, array(center, center) ); // Medium Thumbnail
-        add_image_size( 'large-thumb', 600, 380, true ); // Large Thumbnail
+        add_image_size( 'small-thumb', 90, 70, true ); // Small Thumbnail
+        add_image_size( 'medium-thumb', 750, 540, array(center, center) ); // Medium Thumbnail
+        add_image_size( 'large-thumb', 1300, 700, array(center, center) ); // Large Thumbnail
 
     }
-
-//Bootstrap
-// function wpt_register_js() {
-//     wp_register_script('jquery.bootstrap.min', get_template_directory_uri() . '/js/bootstrap.min.js', 'jquery');
-//     wp_enqueue_script('jquery.bootstrap.min');
-// }
-// add_action( 'init', 'wpt_register_js' );
-
 
 
 // Remove Contact Form 7 CSS + JS from all pages except Contact
