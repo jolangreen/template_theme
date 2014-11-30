@@ -1,8 +1,9 @@
 //load first banner item
 $(function(){
   $('.item').first().addClass('active');
-})
+});
 
+/*
 //Smooth Anchor Link
 $(function() {
   $('a[href*=#]:not([href=#])').click(function() {
@@ -18,7 +19,7 @@ $(function() {
     }
   });
 });
-
+*/
 
 //animate elements
 $(window).scroll(function() {
