@@ -11,8 +11,8 @@ Text Domain:    UntitledCompany
 
 $clrBackground: #FFF;
 
-$clrPrimary: #1FAE4B;
-$clrSecondary: #4ec0c1;
+$clrPrimary: #1FAE4A;
+$clrSecondary: #4ec0c2;
 
 $clrText: #8c989e;
 
@@ -24,6 +24,12 @@ $clrDarkest: #111;
 
 $fontPrimary: 'robotoregular', Arial, Helvetica, Sans-serif;
 $fontSecondary: 'HelveticaNeueThin', Arial, Helvetica, Sans-serif;
+
+//Screen Sizes
+$screen-xs: 320px;
+$screen-sm: 360px;
+$screen-md: 769px;
+$screen-lg: 1024px;
 
 @mixin position($top, $right, $bottom, $left, $pos: absolute) {
     position: $pos;
@@ -43,11 +49,13 @@ $fontSecondary: 'HelveticaNeueThin', Arial, Helvetica, Sans-serif;
     border-#{$side}: 1px solid $color;
 }
 
+
 @import "compass/css3";
 @import "reset";
-@import "typography";
+@import "global";
 @import "layout";
-@import "page-elements";
-@import "responsive";
+@import "page-all";
+@import "modules";
+@import "classes";
+@import "mobile";
 @import "wordpress";
-

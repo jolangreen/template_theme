@@ -1,10 +1,14 @@
 
-
 /* ==========================================================================
    RESPONSIVE CSS
    ========================================================================== */
 
-@media (max-width: 979px)
+//Tablet Landscape
+@media (max-width: $screen-lg)
+
+
+//Tablet Portrait
+@media (max-width: $screen-md)
     body
         padding-left: 0
         padding-right: 0
@@ -35,11 +39,8 @@
         height: 383px
 
 
-//
-@media (max-width: 767px)
-    header
-        margin-left: -20px
-        margin-right: -20px
+//Samsung Galaxy Note 2/ Iphone 6
+@media (max-width: $screen-sm)
 
     .row
         padding-left: 15px
@@ -77,15 +78,11 @@
 
 
 
-    footer
-        margin-left: -20px
-        margin-right: -20px
-        padding-left: 20px
-        padding-right: 20px
-
     footer .container
         text-align: center
 
         .pull-right
             float: none !important
 
+//Iphone 4 / 5
+@media (max-width: $screen-xs)

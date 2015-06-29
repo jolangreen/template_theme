@@ -1,0 +1,126 @@
+/* ==========================================================================
+   GLOBAL
+   ========================================================================== */
+
+body
+    background: $clrBackground
+    padding: 0px
+    font-family: $fontPrimary
+    color: $clrText
+    font-size: 14px
+
+a, a:visited
+    color: $clrPrimary
+    text-decoration: none
+    +transition(all 0.2s ease-in-out)
+
+a:hover, a:focus, a:active
+    color: $clrSecondary
+    text-decoration: none
+
+hr
+    margin: 15px 0
+    border: 0
+    border-bottom: 1px solid $clrBright
+
+
+/*___________________________ FORMS ___________________________*/
+
+form
+    input[type="text"], input[type="email"], input[type="url"], textarea
+        width: 100%
+        height: 30px
+        padding: 4px
+        background: $clrBackground
+        border: 1px solid $clrBright
+        color: $clrText
+        font-size: 13px
+        +border-radius(5px)
+        margin-bottom: 15px
+
+    textarea
+        height: 100px
+
+    input[type="button"], input[type="submit"]
+        height: 36px
+        padding: 8px
+        background: $clrPrimary
+        cursor: pointer /* hand-shaped cursor */
+        cursor: hand /* for IE 5.x */
+        border: none
+        color: $clrBrightest
+        font-size: 14px
+        -moz-border-radius: 5px
+        border-radius: 5px
+        &:hover
+            background-color: $clrSecondary
+
+//Search Form
+form.search-form 
+    label
+        display: inline
+
+    .screen-reader-text
+        display: none
+
+    input.search-field
+        border: none
+        background: #f2f2f2
+        +border-radius(4px)
+        color: #616161
+        font-size: 12px
+        padding: 13px 22px
+        width: 60%
+
+    input[type="submit"]
+        padding: 11px 16px
+        font-size: 14px
+        height: auto
+        background: $clrPrimary
+       
+
+/*___________________________ TYPOGRAPHY ___________________________*/
+
+// Define our font
++font-face("robotoregular", font-files("roboto-regular-webfont.eot", "roboto-regular-webfont.eot?#iefix", "roboto-regular-webfont.woff", "roboto-regular-webfont.ttf", "roboto-regular-webfont.svg#robotoregular"))
+
++font-face("HelveticaNeueThin", font-files("hlt____-webfont.eot", "hlt____-webfont.eot?#iefix", "hlt____-webfont.woff", "hlt____-webfont.ttf", "hlt____-webfont.svg#HelveticaNeueThin"))
+
+
+// Custom Text Highlight
+::selection
+    background: $clrPrimary
+    color: $clrBrightest
+    text-shadow: none
+
+::-webkit-selection
+    background: $clrPrimary
+    color: $clrBrightest
+    text-shadow: none
+
+::-moz-selection
+    background: $clrPrimary
+    color: $clrBrightest
+    text-shadow: none
+
+// Headings
+h1, h2, h3, h4, h5, h6
+    font-family: $fontSecondary
+    color: $clrDark
+    font-weight: normal
+    margin-top: 0
+
+h1
+    font-size: 40px
+    margin-bottom: 25px
+
+h2
+    font-size: 36px
+    margin-bottom: 15px
+
+h3
+    font-size: 28px
+    margin-bottom: 7px
+
+p
+    margin-bottom: 20px
