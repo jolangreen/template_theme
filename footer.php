@@ -13,7 +13,7 @@
 </footer>
 
 
-<script src="<?php bloginfo('template_directory'); ?>/assets/js/scripts.js"></script>
+<script src="<?php bloginfo('template_directory'); ?>/js/scripts.js"></script>
 <script type="text/javascript">
     if ($(window).width() > 960) {
        var s = skrollr.init();

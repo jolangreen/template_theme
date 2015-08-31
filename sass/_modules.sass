@@ -2,6 +2,42 @@
    MODULES
    ========================================================================== */
 
+
+// ----- LIST -----
+.primary article
+    ul
+        list-style-type: none
+        padding-left: 15px
+
+        li:before
+            font-family: 'FontAwesome'
+            content: '\f00c'
+            margin: 0 5px 0 -15px
+
+        li
+            margin-bottom: 15px
+
+    ol li:before
+        content: none
+
+
+
+// ----- TABLE -----
+article table
+    thead tr
+        background: $clrPrimary
+        color: $clrBrightest
+
+    tr:nth-child(2n)
+        background: #e0e3e5
+
+    tr
+        background: #f1f1f1
+
+    tr td
+        padding: 5px 10px
+
+
 // Pagination
 .pagination .page-numbers
     padding: 10px

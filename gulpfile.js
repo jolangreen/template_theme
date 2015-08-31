@@ -18,21 +18,21 @@ var gulp = require('gulp'),
 gulp.task('images', function() {
     return gulp.src('images/**/*')
     .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
-    .pipe(gulp.dest('assets/images'))
+    .pipe(gulp.dest('images'))
     .pipe(notify({ message: 'Images task complete' }));
 });
 
 
 //Scripts
 gulp.task('scripts', function() {
-    return gulp.src(['bower_components/jquery/dist/jquery.min.js', 'bower_components/bootstrap/dist/js/bootstrap.min.js', 'js/*.js'])
+    return gulp.src(['bower_components/jquery/dist/jquery.min.js', 'bower_components/bootstrap/dist/js/bootstrap.min.js', 'scripts/*.js'])
     //.pipe(jshint('.jshintrc'))
     //.pipe(jshint.reporter('default'))
     .pipe(concat('scripts.js'))
-    .pipe(gulp.dest('assets/js'))
+    .pipe(gulp.dest('js'))
     .pipe(rename({suffix: '.min'}))
     .pipe(uglify())
-    .pipe(gulp.dest('assets/js'))
+    .pipe(gulp.dest('js'))
     .pipe(notify({ message: 'Scripts task complete' }));
 });
 
@@ -45,7 +45,7 @@ gulp.task('styles', function() {
      .pipe(livereload())
      .pipe(rename({suffix: '.min'}))
      .pipe(minifycss({ keepSpecialComments: 1 }))
-     .pipe(gulp.dest('assets/css'))
+     .pipe(gulp.dest('css'))
      .pipe(notify({ message: 'Styles task complete' }));
  });
 
@@ -53,13 +53,13 @@ gulp.task('styles', function() {
 //Move 'bower_components' styles to 'assets'
 gulp.task('bowerstyles', function() {
     return gulp.src(['./bower_components/bootstrap/dist/css/bootstrap.css', './bower_components/fontawesome/css/font-awesome.css'])
-    .pipe(gulp.dest('./assets/css'));
+    .pipe(gulp.dest('./css'));
 });
 
 //Move 'bower_components' fonts to 'assets'
 gulp.task('bowerfonts', function() {
-    return gulp.src(['./bower_components/bootstrap/dist/fonts/**/*.{ttf,woff,eot,svg,otf}', './bower_components/fontawesome/fonts/**/*.{ttf,woff,eot,svg,otf}', './fonts/**/*.{ttf,woff,eot,svg,otf}'])
-    .pipe(gulp.dest('./assets/fonts'));
+    return gulp.src(['./bower_components/bootstrap/dist/fonts/**/*.{ttf,woff,eot,svg,otf}', './bower_components/fontawesome/fonts/**/*.{ttf,woff,eot,svg,otf}'])
+    .pipe(gulp.dest('./fonts'));
 });
 
 
@@ -85,9 +85,6 @@ gulp.task('watch', function() {
 
   // Watch .js files
   gulp.watch('js/*.js', ['scripts']);
-
-  // Watch image files
-  gulp.watch('images/**/*', ['images']);
 
   // Create LiveReload server
   var server = livereload();
