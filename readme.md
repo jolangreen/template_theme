@@ -64,3 +64,4 @@ $ gulp watch
 + [Fast Secure Contact Form](https://wordpress.org/plugins/si-contact-form/)
 + [Ultimate Maintenance Mode](https://wordpress.org/plugins/ultimate-maintenance-mode/)
 + [Ultimate Post Widget](https://wordpress.org/plugins/ultimate-posts-widget/)
++ [BackWPup - Database backup](https://wordpress.org/plugins/backwpup/)
