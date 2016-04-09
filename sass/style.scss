@@ -51,7 +51,7 @@ $screen-lg: 1200px;
 }
 
 
-$root-font-size: 16px;
+$root-font-size: 14px;
 @mixin font($size, $line-height: null, $weight: null) {
   font-size: $size; // IE fix
   font-size: ($size / $root-font-size) * 1rem;
