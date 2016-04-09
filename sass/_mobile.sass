@@ -3,60 +3,56 @@
    RESPONSIVE CSS
    ========================================================================== */
 
-//Tablet Landscape
+// Desktop at 1200px
 @media (max-width: $screen-lg)
 
-
-//Tablet Portrait
+// Desktop at 990px
 @media (max-width: $screen-md)
+
+
+// Tablet Portrait
+@media (min-width: $screen-sm) and (max-width: 769px)
+    .carousel .carousel-caption
+        width: auto
+
+
+// Samsung Galaxy Note 2/ Iphone 6
+@media (max-width: $screen-sm)
     body
         padding-left: 0
         padding-right: 0
-
-    .container.navbar-wrapper
-        margin-bottom: 0
-        width: auto
-
-    .navbar-inner
-        border-radius: 0
-
-    nav#access
-        float: none
-        background-color: $clrPrimary
-
-    .nav-collapse .navbar-form, .nav-collapse .navbar-search
-        border-top: 1px solid $clrBright
-        border-bottom: 1px solid $clrBright
-
-    .navbar
-        height: auto
-
-    .carousel .item
-        height: 700px
-
-    .carousel img
-        width: auto
-        height: 383px
-
-
-//Samsung Galaxy Note 2/ Iphone 6
-@media (max-width: $screen-sm)
 
     .row
         padding-left: 15px
         padding-right: 15px
 
-    nav
+    .container.navbar-wrapper
+        margin-bottom: 0
+        width: auto
+
+    .container > .navbar-header
+        margin-left: 0
+        margin-right: 0
+
+    .navbar-inner
+        border-radius: 0
+
+    nav.navbar
         float: none
         .nav, .nav li
             display: block
+            text-align: center
+    nav.navbar .nav .current-menu-item > a
+        background: transparent
 
     .nav-collapse .navbar-form, .nav-collapse .navbar-search
         border-top: 1px solid $clrBright
         border-bottom: 1px solid $clrBright
 
-    .navbar-toggle .icon-bar
-        background: $clrBrightest
+    .navbar-toggle
+        margin-right: 0
+        .icon-bar
+            background: $clrDark
         
     .navbar
         height: auto
@@ -66,15 +62,31 @@
         .pull-right
             float: none !important
 
+    nav#access
+        float: none
+        background-color: $clrPrimary
+
+
+    // Banner
+    #main #banner
+        margin-top: 0
+
     .carousel
-        margin-left: -20px
-        margin-right: -20px
+        .carousel-caption
+            width: auto
+            top: 0
+            left: auto
+            right: auto
 
         .item
             height: 300px
 
         img
-            height: 300px
+            width: auto
+
+
+    .img-fit img
+        width: 100%
 
 
 
