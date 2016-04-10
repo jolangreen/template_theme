@@ -25,11 +25,48 @@ $clrDarkest: #111;
 $fontPrimary: 'robotoregular', Arial, Helvetica, Sans-serif;
 $fontSecondary: 'HelveticaNeueThin', Arial, Helvetica, Sans-serif;
 
-//Screen Sizes
-$screen-xs: 320px;
-$screen-sm: 767px; // All mobile devices
-$screen-md: 992px; // Desktop / Tablet
-$screen-lg: 1200px;
+
+// Screen Sizes / Responsive
+@mixin screen-xs {
+	@media (max-width: 320px) {
+		@content;
+	}
+}
+
+@mixin screen-sm {
+	@media (max-width: 767px) {
+		@content;
+	}
+}
+
+@mixin screen-md {
+	@media (max-width: 992px) {
+		@content;
+	}
+}
+
+@mixin screen-lg {
+	@media (max-width: 1200px) {
+		@content;
+	}
+}
+
+
+$root-font-size: 16px;
+@mixin font($size, $line-height: null, $weight: null) {
+  font-size: $size; // IE fix
+  font-size: ($size / $root-font-size) * 1rem;
+  @if $line-height != null {
+    line-height: $line-height;
+  }
+  @if $weight != null {
+    font-weight: $weight;
+  }
+}
+// Usage example:
+// p {
+//  @include font(24px, 1.25, bold);
+//}
 
 
 @mixin position($top, $right, $bottom, $left, $pos: absolute) {
@@ -49,24 +86,6 @@ $screen-lg: 1200px;
 @mixin border($side, $color) {
     border-#{$side}: 1px solid $color;
 }
-
-
-$root-font-size: 14px;
-@mixin font($size, $line-height: null, $weight: null) {
-  font-size: $size; // IE fix
-  font-size: ($size / $root-font-size) * 1rem;
-  @if $line-height != null {
-    line-height: $line-height;
-  }
-  @if $weight != null {
-    font-weight: $weight;
-  }
-}
-
-// Usage example:
-// p {
-//  @include font(24px, 1.25, bold);
-//}
 
 
 @import "compass/css3";
