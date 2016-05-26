@@ -11,7 +11,7 @@
         					<p><?php _e( 'We&rsquo;re sorry, but the page you&rsquo;re looking for can&rsquo;t be found.', 'twentythirteen' ); ?></p>
         					<p>You might want to head to our <a href="<?php echo home_url( '/' ); ?>">Home Page</a> to see if you can find what you are looking for from there.</p>
         					
-        					<p><small>Please report any broken links to the <a href="<?php echo home_url( '/' ); ?>">The Team</a>.</p>
+        					<p><small>Please report any broken links to the <a href="<?php echo home_url( '/' ); ?>">Team</a>.</p>
 
         					<?php get_search_form(); ?>
         				</div><!-- .page-content -->
