@@ -4,12 +4,14 @@
 		<div class="container">
           	<div class="row">
                 <div class="primary col-md-8">
-        			<h2><?php _e( 'Not found', 'twentythirteen' ); ?></h2>
 
         			<div class="page-wrapper">
         				<div class="page-content">
-        					<h2><?php _e( 'This is somewhat embarrassing, isn&rsquo;t it?', 'twentythirteen' ); ?></h2>
-        					<p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'twentythirteen' ); ?></p>
+        					<h2><?php _e( '404 ERROR: PAGE NOT FOUND', 'twentythirteen' ); ?></h2>
+        					<p><?php _e( 'We&rsquo;re sorry, but the page you&rsquo;re looking for can&rsquo;t be found.', 'twentythirteen' ); ?></p>
+        					<p>You might want to head to our <a href="<?php echo home_url( '/' ); ?>">Home Page</a> to see if you can find what you are looking for from there.</p>
+        					
+        					<p><small>Please report any broken links to the <a href="<?php echo home_url( '/' ); ?>">The Team</a>.</p>
 
         					<?php get_search_form(); ?>
         				</div><!-- .page-content -->
