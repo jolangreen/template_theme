@@ -2,6 +2,89 @@
    FEATURES / PAGE ELEMENTS
    ========================================================================== */
 
+/* Home Page
+   ========================================================================== */
+
+.banner
+    overflow: hidden
+    padding: 0
+    position: relative
+    /* margin-top: -95px */
+
+.carousel
+
+    .container
+        position: relative
+        z-index: 9
+
+    .item
+        height: 700px
+
+        img
+            height: 100%
+            left: 0
+            min-width: 100%
+            position: absolute
+            top: 0
+
+    .carousel-img
+        max-width: 450px
+        position: absolute
+        right: 10%
+        top: 25%
+
+        img
+            height: auto
+            position: relative
+            width: 100%
+            z-index: 6
+
+    .carousel-caption
+        background-color: transparent
+        left: 15%
+        top: 28%
+        width: 36%
+        text-align: left
+
+        h1, p
+            background: rgba(0,0,0,.7)
+            display: inline-block
+            margin-bottom: 6px
+            margin: 0
+            padding: 5px 10px
+            color: #fff
+            line-height: 1.25
+            text-shadow: 0 1px 1px rgba(0,0,0,.4)
+
+        h1
+            font-size: 50px
+        p
+            font-size: 22px
+        a.btn
+            margin-top: 15px
+            padding: 7px 16px
+            color: $clrBrightest
+            font-size: 18px
+            text-transform: uppercase
+
+
+
+    .carousel-control
+        z-index: 5
+
+        .glyphicon-chevron-left, .glyphicon-chevron-right
+            background: $clrDarkest
+            height: 80px
+            top: 44%
+            width: 50px
+            color: $clrBrightest
+            line-height: 77px
+
+        .glyphicon-chevron-left
+            left: 0
+        .glyphicon-chevron-right
+            right: 0
+
 
 /*___________________________ BLOG PAGE ___________________________*/
 
