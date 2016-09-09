@@ -84,7 +84,7 @@ gulp.task('watch', function() {
   gulp.watch('sass/*.sass', ['styles']);
 
   // Watch .js files
-  gulp.watch('js/*.js', ['scripts']);
+  gulp.watch('scripts/*.js', ['scripts']);
 
   // Create LiveReload server
   var server = livereload();
