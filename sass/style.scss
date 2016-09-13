@@ -22,9 +22,9 @@ $clrMedium: #777;
 $clrDark: #333;
 $clrDarkest: #111;
 
-$fontPrimary: 'robotoregular', Arial, Helvetica, Sans-serif;
-$fontSecondary: 'HelveticaNeueThin', Arial, Helvetica, Sans-serif;
-
+$fontPrimary: 'open_sansregular', Arial, Helvetica, Sans-serif;
+$fontSecondary: 'open_sanslight', Arial, Helvetica, Sans-serif;
+$fontTertiary: 'open_sansbold', Arial, Helvetica, Sans-serif;
 
 // Screen Sizes / Responsive
 @mixin screen-xs {
