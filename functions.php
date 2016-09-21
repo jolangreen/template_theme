@@ -604,8 +604,8 @@ add_action( 'customize_preview_init', 'twentythirteen_customize_preview_js' );
     if( function_exists( 'add_theme_support' ) ) {
         // This theme uses post thumbnails
         add_theme_support( 'post-thumbnails' );
-        add_image_size( 'small-thumb', 90, 70, true ); // Small Thumbnail
-        add_image_size( 'medium-thumb', 750, 540, array(center, center) ); // Medium Thumbnail
+        add_image_size( 'small-thumb', 90, 70, true ); // Hard Crop
+        add_image_size( 'medium-thumb', 750, 540, array(center, center) ); // Crop Center
         add_image_size( 'large-thumb', 1300, 700, array(center, center) ); // Large Thumbnail
 
     }
