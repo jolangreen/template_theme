@@ -65,3 +65,4 @@ $ gulp watch
 + [Ultimate Maintenance Mode](https://wordpress.org/plugins/ultimate-maintenance-mode/)
 + [Ultimate Post Widget](https://wordpress.org/plugins/ultimate-posts-widget/)
 + [BackWPup - Database backup](https://wordpress.org/plugins/backwpup/)
++ [WP Editor Plugin](https://en-ca.wordpress.org/plugins/wp-editor/)
