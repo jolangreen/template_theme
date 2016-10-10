@@ -598,7 +598,22 @@ add_action( 'customize_preview_init', 'twentythirteen_customize_preview_js' );
 	echo '<link rel="shortcut icon" href="' . $favicon_url . '" />';
 	}
 	add_action('admin_head', 'pa_admin_area_favicon');
-		
+
+//Change Company Logo to Wordpress Admin
+/*
+function my_login_logo() { ?>
+    <style type="text/css">
+        #login h1 a, .login h1 a {
+            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/images/logo.png);
+            padding-bottom: 30px;
+            background-size: 155px 50px;
+            width: 100%;
+            height: 50px;
+        }
+    </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'my_login_logo' );
+*/
 
 //Custom image sizes
     if( function_exists( 'add_theme_support' ) ) {
