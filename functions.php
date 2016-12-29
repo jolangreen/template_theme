@@ -553,8 +553,9 @@ add_action( 'customize_preview_init', 'twentythirteen_customize_preview_js' );
 
 // Custom Excerpts
 	function html5wp_index($length) { // Create Number of Words Callback for Index page Excerpts, call using html5wp_excerpt('html5wp_index');
-	    return 20;
+	    return 40;
 	}
+	add_filter( 'excerpt_length', 'html5wp_index', 999 );
 
 // Create the Custom Excerpts callback
 	function html5wp_excerpt($length_callback='', $more_callback='') {
