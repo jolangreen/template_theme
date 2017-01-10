@@ -64,5 +64,11 @@ $ gulp watch
 + [Fast Secure Contact Form](https://wordpress.org/plugins/si-contact-form/)
 + [Ultimate Maintenance Mode](https://wordpress.org/plugins/ultimate-maintenance-mode/)
 + [Ultimate Post Widget](https://wordpress.org/plugins/ultimate-posts-widget/)
-+ [BackWPup - Database backup](https://wordpress.org/plugins/backwpup/)
 + [WP Editor Plugin](https://en-ca.wordpress.org/plugins/wp-editor/)
++ [WP Migrate DB](https://en-ca.wordpress.org/plugins/wp-migrate-db/)
+
+## Security
++ Install [Limit Login Attempts](http://www.advancedcustomfields.com)
++ Install [WordFence](https://en-ca.wordpress.org/plugins/wordfence/)
++ Start using [Sucuri](https://sitecheck.sucuri.net/)
++ [BackWPup - Database backup](https://wordpress.org/plugins/backwpup/)
