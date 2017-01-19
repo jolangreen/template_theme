@@ -9,8 +9,8 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
-<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/bootstrap.css" />
-<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/font-awesome.css" />
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 
 <?php wp_head(); ?>
 </head>
