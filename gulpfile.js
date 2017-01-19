@@ -74,7 +74,7 @@ gulp.task('clean', function() {
 
 // Default task
 gulp.task('default', ['clean'], function() {
-    gulp.start('images', 'scripts',  'styles', 'bowerstyles', 'bowerfonts');
+    gulp.start('images', 'scripts',  'styles');
 });
 
 
@@ -91,7 +91,7 @@ gulp.task('watch', function() {
   var server = livereload();
 
   // Watch any files in assets/, reload on change
-  gulp.watch(['assets/**', 'index.html']).on('change', function(file) {
+  gulp.watch(['scripts/**', 'index.html']).on('change', function(file) {
     server.changed(file.path);
   });
 
