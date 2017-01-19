@@ -25,7 +25,7 @@ gulp.task('images', function() {
 
 //Scripts
 gulp.task('scripts', function() {
-    return gulp.src(['bower_components/jquery/dist/jquery.min.js', 'bower_components/bootstrap/dist/js/bootstrap.min.js', 'scripts/*.js'])
+    return gulp.src(['scripts/*.js'])
     //.pipe(jshint('.jshintrc'))
     //.pipe(jshint.reporter('default'))
     .pipe(concat('scripts.js'))
@@ -49,18 +49,19 @@ gulp.task('styles', function() {
      .pipe(notify({ message: 'Styles task complete' }));
  });
 
-
+/*
 //Move 'bower_components' styles to 'assets'
 gulp.task('bowerstyles', function() {
     return gulp.src(['./bower_components/bootstrap/dist/css/bootstrap.css', './bower_components/fontawesome/css/font-awesome.css'])
     .pipe(gulp.dest('./css'));
 });
+*/
 
 //Move 'bower_components' fonts to 'assets'
-gulp.task('bowerfonts', function() {
-    return gulp.src(['./bower_components/bootstrap/dist/fonts/**/*.{ttf,woff,eot,svg,otf}', './bower_components/fontawesome/fonts/**/*.{ttf,woff,eot,svg,otf}'])
-    .pipe(gulp.dest('./fonts'));
-});
+// gulp.task('bowerfonts', function() {
+//     return gulp.src(['./bower_components/bootstrap/dist/fonts/**/*.{ttf,woff,eot,svg,otf}', './bower_components/fontawesome/fonts/**/*.{ttf,woff,eot,svg,otf}'])
+//     .pipe(gulp.dest('./fonts'));
+// });
 
 
 // Clean. Delete and replace all files in the destination folder.
@@ -90,7 +91,7 @@ gulp.task('watch', function() {
   var server = livereload();
 
   // Watch any files in assets/, reload on change
-  gulp.watch(['assets/**', 'template-sample.html']).on('change', function(file) {
+  gulp.watch(['assets/**', 'index.html']).on('change', function(file) {
     server.changed(file.path);
   });
 
