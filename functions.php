@@ -551,6 +551,18 @@ add_action( 'customize_preview_init', 'twentythirteen_customize_preview_js' );
 /* ---------------------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------------------- */
 
+//Making jQuery to load from Google Library
+function replace_jquery() {
+	if (!is_admin()) {
+		// comment out the next two lines to load the local copy of jQuery
+		wp_deregister_script('jquery');
+		wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js', false, '3.1.0');
+		wp_enqueue_script('jquery');
+	}
+}
+add_action('init', 'replace_jquery');
+
+
 // Custom Excerpts
 	function html5wp_index($length) { // Create Number of Words Callback for Index page Excerpts, call using html5wp_excerpt('html5wp_index');
 	    return 40;
