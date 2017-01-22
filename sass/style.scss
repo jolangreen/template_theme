@@ -71,7 +71,7 @@ $root-font-size: 16px;
 }
 // Usage example:
 // p {
-//  @include font(24px, 1.25, bold);
+//  +font(24px, 1.25, bold);
 //}
 
 
@@ -82,7 +82,7 @@ $root-font-size: 16px;
     bottom: $bottom;
     left: $left;
 }
-//+position(10px, 0, 0, 2px)
+// +position(10px, 0, 0, 2px)
 
 @mixin size($width, $height: $width) {
     width: $width;
@@ -101,6 +101,15 @@ $root-font-size: 16px;
   filter: alpha(opacity=$opacity-ie); //IE8
 }
 
+//Vertically Center
+@mixin align-vertical {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+// +align-vertical()
 
 
 @import "compass/css3";
