@@ -40,12 +40,18 @@ $fontTertiary: 'open_sansbold', Arial, Helvetica, Sans-serif;
 }
 
 @mixin screen-md {
-	@media (max-width: 992px) {
+	@media (max-width: 769px) {
 		@content;
 	}
 }
 
 @mixin screen-lg {
+	@media (max-width: 992px) {
+		@content;
+	}
+}
+
+@mixin screen-xl {
 	@media (max-width: 1200px) {
 		@content;
 	}
