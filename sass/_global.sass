@@ -2,14 +2,14 @@
    GLOBAL
    ========================================================================== */
 html
-    +font($root-font-size)
+    font-size: $root-font-size
 
 body
     background: $clrBackground
     padding: 0px
     font-family: $fontPrimary
     color: $clrText
-    font-size: $root-font-size
+    +font(16px)
 
 a, a:visited
     color: $clrPrimary
@@ -38,7 +38,7 @@ form
         background: $clrBackground
         border: 1px solid $clrBright
         color: $clrText
-        font-size: 13px
+        +font(13px)
         +border-radius(5px)
         margin-bottom: 15px
 
@@ -53,7 +53,7 @@ form
         cursor: hand /* for IE 5.x */
         border: none
         color: $clrBrightest
-        font-size: 14px
+        +font(14px)
         -moz-border-radius: 5px
         border-radius: 5px
         &:hover
@@ -72,13 +72,13 @@ form.search-form
         background: #f2f2f2
         +border-radius(4px)
         color: #616161
-        font-size: 12px
+        +font(12px)
         padding: 13px 22px
         width: 60%
 
     input[type="submit"]
         padding: 11px 16px
-        font-size: 14px
+        +font(14px)
         height: auto
         background: $clrPrimary
        
