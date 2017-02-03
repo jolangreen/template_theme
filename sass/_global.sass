@@ -28,6 +28,58 @@ hr
 strong
     font-family: $fontTertiary
 
+
+
+/*___________________________ TYPOGRAPHY ___________________________*/
+
+// Define our font
++font-face("open_sansregular", font-files("opensans-regular-webfont.eot", "opensans-regular-webfont.eot?#iefix", "opensans-regular-webfont.woff", "opensans-regular-webfont.ttf", "opensans-regular-webfont.svg#open_sansregular"))
+
++font-face("open_sanslight", font-files("opensans-light-webfont.eot", "opensans-light-webfont.eot?#iefix", "opensans-light-webfont.woff", "opensans-light-webfont.ttf", "opensans-light-webfont.svg#open_sanslight"))
+
++font-face("open_sansbold", font-files("opensans-bold-webfont.eot", "opensans-bold-webfont.eot?#iefix", "opensans-bold-webfont.woff", "opensans-bold-webfont.ttf", "opensans-bold-webfont.svg#open_sansbold"))
+
+
+// Custom Text Highlight
+::selection
+    background: $clrPrimary
+    color: $clrBrightest
+    text-shadow: none
+
+::-webkit-selection
+    background: $clrPrimary
+    color: $clrBrightest
+    text-shadow: none
+
+::-moz-selection
+    background: $clrPrimary
+    color: $clrBrightest
+    text-shadow: none
+
+// Headings
+h1, h2, h3, h4, h5, h6
+    font-family: $fontSecondary
+    color: $clrDark
+    font-weight: normal
+    margin-top: 0
+
+h1
+    +font(40px)
+    margin-bottom: 25px
+
+h2
+    +font(36px)
+    margin-bottom: 15px
+
+h3
+    +font(28px)
+    margin-bottom: 7px
+
+p
+    margin-bottom: 20px
+
+   
+   
 /*___________________________ FORMS ___________________________*/
 
 form
@@ -82,51 +134,4 @@ form.search-form
         height: auto
         background: $clrPrimary
        
-
-/*___________________________ TYPOGRAPHY ___________________________*/
-
-// Define our font
-+font-face("open_sansregular", font-files("opensans-regular-webfont.eot", "opensans-regular-webfont.eot?#iefix", "opensans-regular-webfont.woff", "opensans-regular-webfont.ttf", "opensans-regular-webfont.svg#open_sansregular"))
-
-+font-face("open_sanslight", font-files("opensans-light-webfont.eot", "opensans-light-webfont.eot?#iefix", "opensans-light-webfont.woff", "opensans-light-webfont.ttf", "opensans-light-webfont.svg#open_sanslight"))
-
-+font-face("open_sansbold", font-files("opensans-bold-webfont.eot", "opensans-bold-webfont.eot?#iefix", "opensans-bold-webfont.woff", "opensans-bold-webfont.ttf", "opensans-bold-webfont.svg#open_sansbold"))
-
-
-// Custom Text Highlight
-::selection
-    background: $clrPrimary
-    color: $clrBrightest
-    text-shadow: none
-
-::-webkit-selection
-    background: $clrPrimary
-    color: $clrBrightest
-    text-shadow: none
-
-::-moz-selection
-    background: $clrPrimary
-    color: $clrBrightest
-    text-shadow: none
-
-// Headings
-h1, h2, h3, h4, h5, h6
-    font-family: $fontSecondary
-    color: $clrDark
-    font-weight: normal
-    margin-top: 0
-
-h1
-    +font(40px)
-    margin-bottom: 25px
-
-h2
-    +font(36px)
-    margin-bottom: 15px
-
-h3
-    +font(28px)
-    margin-bottom: 7px
-
-p
-    margin-bottom: 20px
+   
