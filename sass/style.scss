@@ -123,11 +123,11 @@ $root-font-size: 16px;
 
 @import "compass/css3";
 @import "reset";
-@import "global";
+@import "base";
 @import "layout";
 @import "modules";
 @import "page-all";
 @import "page-home";
-@import "classes";
+@import "modifiers";
 @import "mobile";
 @import "wordpress";
