@@ -174,6 +174,16 @@ $root-font-size: 16px;
   }
 }
 
+// Custom List Bullet
+@mixin placeholder($icon: \f105) {
+	&:before {
+		font-family: 'FontAwesome';
+		margin: 0 10px 0 -15px;
+		content: '$icon';
+		@content
+	}
+}
+
 
 @import "compass/css3";
 @import "reset";
