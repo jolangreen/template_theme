@@ -127,6 +127,53 @@ $root-font-size: 16px;
 }
 // +truncateText
 
+// Button Arrow
+@mixin arrow($dir) {
+  width: 20px;
+  height: 20px;
+  &:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px;
+    position: absolute;
+    border-color: transparent;
+    top: 0px;
+  }
+  @if $dir == 'left' {
+    &:after {
+      right: 0px;
+      border-right-color: white;
+    }
+  }
+  @if $dir == 'right' {
+    &:after {
+      left: 0px;
+      border-left-color: white;
+    }
+  }
+}
+
+// Placeholder 
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content
+  }
+
+  &:-moz-placeholder {
+    @content
+  }
+
+  &::-moz-placeholder {
+    @content
+  }
+
+  &:-ms-input-placeholder {
+    @content
+  }
+}
+
 
 @import "compass/css3";
 @import "reset";
