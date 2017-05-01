@@ -130,9 +130,9 @@ form.search-form input.search-field { border: none; background: #f2f2f2; -moz-bo
 form.search-form input[type="submit"] { padding: 11px 16px; font-size: 14px; font-size: 0.875rem; height: auto; background: #1FAE4A; }
 
 /*___________________________ TYPOGRAPHY ___________________________ */
-@font-face { font-family: "open_sansregular"; src: url('fonts/opensans-regular-webfont.eot?1455385654') format('embedded-opentype'), url('fonts/opensans-regular-webfont.eot?&1455385654#iefix') format('embedded-opentype'), url('fonts/opensans-regular-webfont.woff?1455385654') format('woff'), url('fonts/opensans-regular-webfont.ttf?1455385654') format('truetype'), url('fonts/opensans-regular-webfont.svg?1455385654#open_sansregular') format('svg'); }
-@font-face { font-family: "open_sanslight"; src: url('fonts/opensans-light-webfont.eot?1455385654') format('embedded-opentype'), url('fonts/opensans-light-webfont.eot?&1455385654#iefix') format('embedded-opentype'), url('fonts/opensans-light-webfont.woff?1455385654') format('woff'), url('fonts/opensans-light-webfont.ttf?1455385654') format('truetype'), url('fonts/opensans-light-webfont.svg?1455385654#open_sanslight') format('svg'); }
-@font-face { font-family: "open_sansbold"; src: url('fonts/opensans-bold-webfont.eot?1455385654') format('embedded-opentype'), url('fonts/opensans-bold-webfont.eot?&1455385654#iefix') format('embedded-opentype'), url('fonts/opensans-bold-webfont.woff?1455385654') format('woff'), url('fonts/opensans-bold-webfont.ttf?1455385654') format('truetype'), url('fonts/opensans-bold-webfont.svg?1455385654#open_sansbold') format('svg'); }
+@font-face { font-family: "open_sansregular"; src: url('assets/fonts/opensans-regular-webfont.eot?1455385654') format('embedded-opentype'), url('assets/fonts/opensans-regular-webfont.eot?&1455385654#iefix') format('embedded-opentype'), url('assets/fonts/opensans-regular-webfont.woff?1455385654') format('woff'), url('assets/fonts/opensans-regular-webfont.ttf?1455385654') format('truetype'), url('assets/fonts/opensans-regular-webfont.svg?1455385654#open_sansregular') format('svg'); }
+@font-face { font-family: "open_sanslight"; src: url('assets/fonts/opensans-light-webfont.eot?1455385654') format('embedded-opentype'), url('assets/fonts/opensans-light-webfont.eot?&1455385654#iefix') format('embedded-opentype'), url('assets/fonts/opensans-light-webfont.woff?1455385654') format('woff'), url('assets/fonts/opensans-light-webfont.ttf?1455385654') format('truetype'), url('assets/fonts/opensans-light-webfont.svg?1455385654#open_sanslight') format('svg'); }
+@font-face { font-family: "open_sansbold"; src: url('assets/fonts/opensans-bold-webfont.eot?1455385654') format('embedded-opentype'), url('assets/fonts/opensans-bold-webfont.eot?&1455385654#iefix') format('embedded-opentype'), url('assets/fonts/opensans-bold-webfont.woff?1455385654') format('woff'), url('assets/fonts/opensans-bold-webfont.ttf?1455385654') format('truetype'), url('assets/fonts/opensans-bold-webfont.svg?1455385654#open_sansbold') format('svg'); }
 ::selection { background: #1FAE4A; color: #fff; text-shadow: none; }
 
 ::-webkit-selection { background: #1FAE4A; color: #fff; text-shadow: none; }
@@ -152,10 +152,10 @@ p { margin-bottom: 20px; }
 /* ========================================================================== Header ========================================================================== */
 .home header { background: transparent; }
 
-header { position: relative; z-index: 1000; width: 100%; background: url('images/headers/banner1.jpg?1485098599') #f1f1f1; background-size: cover; }
+header { position: relative; z-index: 1000; width: 100%; background: url('assets/images/headers/banner1.jpg?1485098599') #f1f1f1; background-size: cover; }
 header .container { position: relative; }
 header .container h1 { margin: 0; line-height: 0; }
-header .container h1 a.logo { display: block; float: left; left: 0; width: 200px; height: 50px; background: url('images/logo.png?1485098598') no-repeat; }
+header .container h1 a.logo { display: block; float: left; left: 0; width: 200px; height: 50px; background: url('assets/images/logo.png?1485098598') no-repeat; }
 
 nav.navbar { margin-bottom: 0; padding: 7px 0 4px; -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0; background: transparent; }
 nav.navbar a, nav.navbar a:visited { color: #fff; }
@@ -176,7 +176,7 @@ nav.navbar .nav .sub-menu .sub-menu ul, nav.navbar .nav .sub-menu .children ul, 
 nav.navbar .nav .sub-menu li:hover > ul, nav.navbar .nav .sub-menu li:hover > ul, nav.navbar .nav .children li:hover > ul, nav.navbar .nav .children li:hover > ul { display: block; }
 
 /* Page Heading */
-.page-intro { background: url('images/headers/banner1.jpg?1485098599'); background-size: cover; color: #fff; }
+.page-intro { background: url('assets/images/headers/banner1.jpg?1485098599'); background-size: cover; color: #fff; }
 .page-intro .tint { padding: 30px 0; position: relative; }
 .page-intro .col-md-6:last-child { text-align: right; }
 .page-intro .col-md-6 a, .page-intro .page-intro .col-md-6 h1 { color: #fff; }

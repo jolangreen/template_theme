@@ -1,71 +1,69 @@
 <?php
 /**
- * Twenty Thirteen back compat functionality
+ * Twenty Seventeen back compat functionality
  *
- * Prevents Twenty Thirteen from running on WordPress versions prior to 3.6,
- * since this theme is not meant to be backward compatible and relies on
- * many new functions and markup changes introduced in 3.6.
+ * Prevents Twenty Seventeen from running on WordPress versions prior to 4.7,
+ * since this theme is not meant to be backward compatible beyond that and
+ * relies on many newer functions and markup changes introduced in 4.7.
  *
  * @package WordPress
- * @subpackage Twenty_Thirteen
- * @since Twenty Thirteen 1.0
+ * @subpackage Twenty_Seventeen
+ * @since Twenty Seventeen 1.0
  */
 
 /**
- * Prevent switching to Twenty Thirteen on old versions of WordPress.
+ * Prevent switching to Twenty Seventeen on old versions of WordPress.
  *
  * Switches to the default theme.
  *
- * @since Twenty Thirteen 1.0
- *
- * @return void
+ * @since Twenty Seventeen 1.0
  */
-function twentythirteen_switch_theme() {
-	switch_theme( WP_DEFAULT_THEME, WP_DEFAULT_THEME );
+function twentyseventeen_switch_theme() {
+	switch_theme( WP_DEFAULT_THEME );
 	unset( $_GET['activated'] );
-	add_action( 'admin_notices', 'twentythirteen_upgrade_notice' );
+	add_action( 'admin_notices', 'twentyseventeen_upgrade_notice' );
 }
-add_action( 'after_switch_theme', 'twentythirteen_switch_theme' );
+add_action( 'after_switch_theme', 'twentyseventeen_switch_theme' );
 
 /**
- * Add message for unsuccessful theme switch.
+ * Adds a message for unsuccessful theme switch.
  *
  * Prints an update nag after an unsuccessful attempt to switch to
- * Twenty Thirteen on WordPress versions prior to 3.6.
+ * Twenty Seventeen on WordPress versions prior to 4.7.
  *
- * @since Twenty Thirteen 1.0
+ * @since Twenty Seventeen 1.0
  *
- * @return void
+ * @global string $wp_version WordPress version.
  */
-function twentythirteen_upgrade_notice() {
-	$message = sprintf( __( 'Twenty Thirteen requires at least WordPress version 3.6. You are running version %s. Please upgrade and try again.', 'twentythirteen' ), $GLOBALS['wp_version'] );
+function twentyseventeen_upgrade_notice() {
+	$message = sprintf( __( 'Twenty Seventeen requires at least WordPress version 4.7. You are running version %s. Please upgrade and try again.', 'twentyseventeen' ), $GLOBALS['wp_version'] );
 	printf( '<div class="error"><p>%s</p></div>', $message );
 }
 
 /**
- * Prevent the Theme Customizer from being loaded on WordPress versions prior to 3.6.
+ * Prevents the Customizer from being loaded on WordPress versions prior to 4.7.
  *
- * @since Twenty Thirteen 1.0
+ * @since Twenty Seventeen 1.0
  *
- * @return void
+ * @global string $wp_version WordPress version.
  */
-function twentythirteen_customize() {
-	wp_die( sprintf( __( 'Twenty Thirteen requires at least WordPress version 3.6. You are running version %s. Please upgrade and try again.', 'twentythirteen' ), $GLOBALS['wp_version'] ), '', array(
+function twentyseventeen_customize() {
+	wp_die( sprintf( __( 'Twenty Seventeen requires at least WordPress version 4.7. You are running version %s. Please upgrade and try again.', 'twentyseventeen' ), $GLOBALS['wp_version'] ), '', array(
 		'back_link' => true,
 	) );
 }
-add_action( 'load-customize.php', 'twentythirteen_customize' );
+add_action( 'load-customize.php', 'twentyseventeen_customize' );
 
 /**
- * Prevent the Theme Preview from being loaded on WordPress versions prior to 3.4.
+ * Prevents the Theme Preview from being loaded on WordPress versions prior to 4.7.
  *
- * @since Twenty Thirteen 1.0
+ * @since Twenty Seventeen 1.0
  *
- * @return void
+ * @global string $wp_version WordPress version.
  */
-function twentythirteen_preview() {
+function twentyseventeen_preview() {
 	if ( isset( $_GET['preview'] ) ) {
-		wp_die( sprintf( __( 'Twenty Thirteen requires at least WordPress version 3.6. You are running version %s. Please upgrade and try again.', 'twentythirteen' ), $GLOBALS['wp_version'] ) );
+		wp_die( sprintf( __( 'Twenty Seventeen requires at least WordPress version 4.7. You are running version %s. Please upgrade and try again.', 'twentyseventeen' ), $GLOBALS['wp_version'] ) );
 	}
 }
-add_action( 'template_redirect', 'twentythirteen_preview' );
+add_action( 'template_redirect', 'twentyseventeen_preview' );
