@@ -26,6 +26,9 @@ $fontPrimary: 'open_sansregular', Arial, Helvetica, Sans-serif;
 $fontSecondary: 'open_sanslight', Arial, Helvetica, Sans-serif;
 $fontTertiary: 'open_sansbold', Arial, Helvetica, Sans-serif;
 
+
+/*______ MIXINS _____*/
+
 // Screen Sizes / Responsive
 @mixin screen-xl {
   @media (max-width: 1200px) {
@@ -46,9 +49,9 @@ $fontTertiary: 'open_sansbold', Arial, Helvetica, Sans-serif;
 }
 
 @mixin screen-sm {
-	@media (max-width: 767px) {
-		@content;
-	}
+  @media (max-width: 767px) {
+    @content;
+  }
 }
 
 @mixin screen-xs {
@@ -57,14 +60,38 @@ $fontTertiary: 'open_sansbold', Arial, Helvetica, Sans-serif;
   }
 }
 
+@mixin screen-tablet {
+  @media (max-width: 769px) and (min-width: 767px){
+    @content;
+  }
+}
+
 @mixin screen-phone {
   @media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 2),
-         (max-width: 767px) and (-webkit-min-device-pixel-ratio: 3) {
+  (max-width: 767px) and (-webkit-min-device-pixel-ratio: 3) {
     @content;
   }
 }
 
 
+// 
+@mixin desktop-only($screen: 769px, $display: initial) {
+  display: $display;
+  @media (max-width: $screen) {
+    display: none;
+  }
+}
+
+@mixin mobile-only($screen: 769px, $display: initial) {
+  display: none;
+  @media (max-width: $screen) {
+    display: $display;
+  }
+}
+
+
+
+// Font Mixins
 $root-font-size: 16px;
 @mixin font($size, $line-height: null, $weight: null) {
   font-size: $size; // IE fix
@@ -76,28 +103,109 @@ $root-font-size: 16px;
     font-weight: $weight;
   }
 }
-// Usage example:
-// p {
-//  +font(24px, 1.25, bold);
-//}
 
-
-@mixin position($top, $right, $bottom, $left, $pos: absolute) {
-    position: $pos;
-    top: $top;
-    right: $right;
-    bottom: $bottom;
-    left: $left;
+@mixin text-large() {
+  font-size: 41px;
 }
-// +position(10px, 0, 0, 2px)
+
+
+// Container Mixins
+@mixin container($width: 100%) {
+  position: relative;
+  padding: 0 15px;
+  margin: 0 auto;
+  max-width: $width;
+  @media (min-width: 768px) {
+    width: 750px;
+  }
+  @media (min-width: 992px) {
+    width: 970px;
+  }
+  @media (min-width: 1200px) {
+    width: 1180px;
+  }
+}
+
+
+@mixin row() {
+  margin-left: -15px;
+  margin-right: -15px;
+  &:before, .container:before {
+    content: "";
+    display: table;
+  }
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin col($width, $mobileWidth: 100%) {
+  box-sizing: border-box;
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: $width;
+  @include screen-sm {
+    width: $mobileWidth;
+  }
+}
+
+@mixin space-inner($top, $bottom: $top) {
+  padding-top: $top;
+  padding-bottom: $bottom;
+}
+
+@mixin space-before($space) {
+  margin-bottom: $space;
+}
+@mixin space-after($space) {
+  margin-bottom: $space;
+}
 
 @mixin size($width, $height: $width) {
-    width: $width;
-    height: $height;
+  width: $width;
+  height: $height;
 }
 
 @mixin border($side, $color) {
-    border-#{$side}: 1px solid $color;
+  border-#{$side}: 1px solid $color;
+}
+
+@mixin position($top, $right, $bottom, $left, $pos: absolute) {
+  position: $pos;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+//Button
+@mixin btn($outline: null) {
+  display: inline-block;
+  padding: 10px 22px;
+  @include border-radius(5px);
+  @include transition(all 0.4s ease-in-out);
+  @if $outline == null {
+    color: $white;
+    background: $orange;
+    &:hover {
+      background: $dark-orange;
+      color: $white;
+      cursor: pointer;
+    }
+  }
+  @if $outline != null {
+    border: 2px solid $orange;
+    color: $orange;
+    background: $white;
+    &:hover {
+      background: #fff9f0;
+      color: $orange;
+      cursor: pointer;
+    }
+  }
 }
 
 
