@@ -619,7 +619,7 @@ add_action('init', 'replace_jquery');
 
 
 //Custom Comments Template
-	include 'comment-template.php';
+	//include 'comment-template.php';
 	
 
 //Add Favicon to Wordpress Backend
