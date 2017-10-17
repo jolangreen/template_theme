@@ -25,55 +25,43 @@ gulp.task('images', function() {
 
 //Scripts
 gulp.task('scripts', function() {
-    return gulp.src(['scripts/*.js'])
-    //.pipe(jshint('.jshintrc'))
-    //.pipe(jshint.reporter('default'))
+    return gulp.src(['bower_components/jquery/dist/jquery.min.js', 'bower_components/bootstrap/dist/js/bootstrap.min.js', 'js/*.js'])
     .pipe(concat('scripts.js'))
-    .pipe(gulp.dest('js'))
-    .pipe(rename({suffix: '.min'}))
     .pipe(uglify())
-    .pipe(gulp.dest('js'))
+    .pipe(gulp.dest('js/min'))
     .pipe(notify({ message: 'Scripts task complete' }));
 });
 
 
 // Compile Sass using compass
 gulp.task('styles', function() {
-   return gulp.src('sass/*.scss')
-     .pipe(compass({ config_file: './config.rb', css: '', sass: 'sass' }))
+   return gulp.src('css/*.scss')
+     .pipe(compass({ config_file: './config.rb', css: '', sass: 'css' }))
      .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
      .pipe(livereload())
      .pipe(rename({suffix: '.min'}))
      .pipe(minifycss({ keepSpecialComments: 1 }))
-     .pipe(gulp.dest('css'))
+     .pipe(gulp.dest('css/min'))
      .pipe(notify({ message: 'Styles task complete' }));
  });
 
-/*
-//Move 'bower_components' styles to 'assets'
+
+//Move 'bower_components' styles to 'css'
 gulp.task('bowerstyles', function() {
-    return gulp.src(['./bower_components/bootstrap/dist/css/bootstrap.css', './bower_components/fontawesome/css/font-awesome.css'])
-    .pipe(gulp.dest('./css'));
+    return gulp.src(['./bower_components/bootstrap/dist/css/bootstrap.min.css', './bower_components/fontawesome/css/font-awesome.min.css'])
+    .pipe(gulp.dest('./css/min'));
 });
-*/
 
-//Move 'bower_components' fonts to 'assets'
-// gulp.task('bowerfonts', function() {
-//     return gulp.src(['./bower_components/bootstrap/dist/fonts/**/*.{ttf,woff,eot,svg,otf}', './bower_components/fontawesome/fonts/**/*.{ttf,woff,eot,svg,otf}'])
-//     .pipe(gulp.dest('./fonts'));
-// });
-
-
-// Clean. Delete and replace all files in the destination folder.
-gulp.task('clean', function() {
-  return gulp.src(['assets/css', 'assets/js', 'assets/images', 'assets/fonts'], {read: false})
-    .pipe(clean());
+//Move 'bower_components' fonts to 'fonts'
+gulp.task('bowerfonts', function() {
+    return gulp.src(['./bower_components/bootstrap/dist/fonts/**/*.{ttf,woff,eot,svg,otf}', './bower_components/fontawesome/fonts/**/*.{ttf,woff,eot,svg,otf}'])
+    .pipe(gulp.dest('./fonts'));
 });
 
 
 
 // Default task
-gulp.task('default', ['clean'], function() {
+gulp.task('default', function() {
     gulp.start('images', 'scripts',  'styles');
 });
 
@@ -82,21 +70,21 @@ gulp.task('default', ['clean'], function() {
 gulp.task('watch', function() {
 
   // Watch .scss files
-  gulp.watch('sass/*.sass', ['styles']);
+  gulp.watch('css/*.sass', ['styles']);
 
   // Watch .js files
-  gulp.watch('scripts/*.js', ['scripts']);
+  gulp.watch('js/*.js', ['scripts']);
 
   // Create LiveReload server
   var server = livereload();
 
   // Watch any files in assets/, reload on change
-  gulp.watch(['scripts/**', 'index.html']).on('change', function(file) {
+  gulp.watch(['js/**', 'index.html']).on('change', function(file) {
     server.changed(file.path);
   });
 
   livereload.listen();
-  gulp.watch('sass/**').on('change', livereload.changed);
+  gulp.watch('css/**').on('change', livereload.changed);
 
 });
 
