@@ -61,7 +61,7 @@ $fontTertiary: 'open_sansbold', Arial, Helvetica, Sans-serif;
 }
 
 @mixin screen-tablet {
-  @media (max-width: 769px) and (min-width: 767px){
+  @media (max-width: 768px) and (min-width: 767px){
     @content;
   }
 }
