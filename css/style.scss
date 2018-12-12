@@ -27,6 +27,49 @@ $fontSecondary: 'open_sanslight', Arial, Helvetica, Sans-serif;
 $fontTertiary: 'open_sansbold', Arial, Helvetica, Sans-serif;
 
 
+
+/* SCREEN BREAKPOINT MIXINS
+ ========================================================================== */
+
+// Screen Sizes / Responsive
+@mixin breakpoint($breakpoint: 'sm', $direction: null) {
+  @if $breakpoint == 'xl' {
+    $breakpoint: 1200px;
+  }
+  @if $breakpoint == 'lg' {
+    $breakpoint: 992px;
+  }
+  @if $breakpoint == 'md' {
+    $breakpoint: 768px;
+  }
+  @if $breakpoint == 'sm' {
+    $breakpoint: 767px;
+  }
+  @if $breakpoint == 'xs' {
+    $breakpoint: 320px;
+  }
+
+  @if $direction == 'up' {
+    @media (min-width: $breakpoint + 1) {
+      @content;
+    }
+  } @else if $breakpoint == 'tablet' {
+    @media (max-width: 768px) and (min-width: 767px) {
+      @content;
+    }
+  } @else if $breakpoint == 'phone' {
+    @media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 2),
+    (max-width: 767px) and (-webkit-min-device-pixel-ratio: 3) {
+      @content;
+    }
+  } @else {
+    @media (max-width: $breakpoint) {
+      @content;
+    }
+  }
+}
+
+
 /*______ MIXINS _____*/
 
 // Screen Sizes / Responsive
