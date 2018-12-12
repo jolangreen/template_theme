@@ -18,7 +18,7 @@
 			echo twentyseventeen_get_svg( array( 'icon' => 'thumb-tack' ) );
 		endif;
 	?>
-	<header class="entry-header">
+	<div class="entry-header">
 		<?php
 			if ( 'post' === get_post_type() ) :
 				echo '<div class="entry-meta">';
@@ -39,7 +39,7 @@
 				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 			}
 		?>
-	</header><!-- .entry-header -->
+	</div><!-- .entry-header -->
 
 	<?php if ( '' !== get_the_post_thumbnail() && ! is_single() ) : ?>
 		<div class="post-thumbnail">

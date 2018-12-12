@@ -15,27 +15,27 @@ get_header(); ?>
 <section>
     <div class="container">
         <div class="row">
-        	<div class="primary col-md-8">
+          <div class="primary col-md-8">
 
-    			<?php while ( have_posts() ) : the_post(); ?>
+          <?php while ( have_posts() ) : the_post(); ?>
 
-    				<?php get_template_part( 'template-parts/post/content', get_post_format() ); ?>
-    				<?php 
-	    				the_post_navigation( array(
-	    					'prev_text' => '<span class="screen-reader-text">' . __( 'Previous Post', 'twentyseventeen' ) . '</span><span aria-hidden="true" class="nav-subtitle">' . __( 'Previous', 'twentyseventeen' ) . '</span> <span class="nav-title"><span class="nav-title-icon-wrapper">' . twentyseventeen_get_svg( array( 'icon' => 'arrow-left' ) ) . '</span>%title</span>',
-	    					'next_text' => '<span class="screen-reader-text">' . __( 'Next Post', 'twentyseventeen' ) . '</span><span aria-hidden="true" class="nav-subtitle">' . __( 'Next', 'twentyseventeen' ) . '</span> <span class="nav-title">%title<span class="nav-title-icon-wrapper">' . twentyseventeen_get_svg( array( 'icon' => 'arrow-right' ) ) . '</span></span>',
-	    				) );
-    				?>
-    				<?php 
-	    				// If comments are open or we have at least one comment, load up the comment template.
-	    				if ( comments_open() || get_comments_number() ) :
-	    					comments_template();
-	    				endif;
-    				?>
+            <?php get_template_part( 'template-parts/post/content', get_post_format() ); ?>
+            <?php 
+              the_post_navigation( array(
+                'prev_text' => '<span class="screen-reader-text">' . __( 'Previous Post', 'twentyseventeen' ) . '</span><span aria-hidden="true" class="nav-subtitle">' . __( 'Previous', 'twentyseventeen' ) . '</span>',
+                'next_text' => '<span class="screen-reader-text">' . __( 'Next Post', 'twentyseventeen' ) . '</span><span aria-hidden="true" class="nav-subtitle">' . __( 'Next', 'twentyseventeen' ) . '</span>',
+              ) );
+            ?>
+            <?php 
+              // If comments are open or we have at least one comment, load up the comment template.
+              if ( comments_open() || get_comments_number() ) :
+                comments_template();
+              endif;
+            ?>
 
-    			<?php endwhile; ?>
+          <?php endwhile; ?>
 
-    		</div><!-- .primary -->
+        </div><!-- .primary -->
             <div class="secondary col-md-4">
                 <?php get_sidebar(); ?>
             </div><!-- .secondary -->
