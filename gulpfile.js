@@ -62,7 +62,7 @@ gulp.task('bowerfonts', function() {
 
 // Default task
 gulp.task('default', function() {
-    gulp.start('images', 'scripts',  'styles');
+    gulp.start('scripts',  'styles');
 });
 
 
@@ -70,7 +70,7 @@ gulp.task('default', function() {
 gulp.task('watch', function() {
 
   // Watch .scss files
-  gulp.watch('css/*.sass', ['styles']);
+  gulp.watch(['css/**/*.scss', 'css/**/*.sass'], ['styles']);
 
   // Watch .js files
   gulp.watch('js/*.js', ['scripts']);

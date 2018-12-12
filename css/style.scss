@@ -9,6 +9,10 @@ Tags:           Blank, HTML5, CSS3
 Text Domain:    UntitledCompany
 */
 
+
+/* VARIABLES
+ ========================================================================== */
+ 
 $clrBackground: #FFF;
 
 $clrPrimary: #1FAE4A;
@@ -338,8 +342,7 @@ $root-font-size: 16px;
 @import "base";
 @import "layout";
 @import "modules";
-@import "pages";
-@import "page-home";
 @import "modifiers";
 @import "mobile";
+@import "pages/*.sass";
 @import "wordpress";

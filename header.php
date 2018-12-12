@@ -19,8 +19,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link href="<?php bloginfo('template_directory'); ?>/favicon.ico" rel="icon" type="image/x-icon" />
-<link href="<?php bloginfo('template_directory'); ?>/css/bootstrap.min.css" rel="stylesheet">
-<link href="<?php bloginfo('template_directory'); ?>/css/font-awesome.min.css" rel="stylesheet" />
+<link href="<?php bloginfo('template_directory'); ?>/css/min/bootstrap.min.css" rel="stylesheet">
+<link href="<?php bloginfo('template_directory'); ?>/css/min/font-awesome.min.css" rel="stylesheet" />
 
 <?php wp_head(); ?>
 </head>
