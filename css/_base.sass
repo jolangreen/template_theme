@@ -5,28 +5,28 @@ html
     font-size: $root-font-size
 
 body
-    background: $clrBackground
+    background: $color-background
     padding: 0px
-    font-family: $fontPrimary
-    color: $clrText
+    font-family: $font-primary
+    color: $color-text
     +font(16px)
 
 a, a:visited
-    color: $clrPrimary
+    color: $color-primary
     text-decoration: none
     +transition(all 0.2s ease-in-out)
 
 a:hover, a:focus, a:active
-    color: $clrSecondary
+    color: $color-secondary
     text-decoration: none
 
 hr
     margin: 15px 0
     border: 0
-    border-bottom: 1px solid $clrBright
+    border-bottom: 1px solid $color-bright
 
 strong
-    font-family: $fontTertiary
+    font-family: $font-tertiary
 
 
 
@@ -42,24 +42,24 @@ strong
 
 // Custom Text Highlight
 ::selection
-    background: $clrPrimary
-    color: $clrBrightest
+    background: $color-primary
+    color: $color-brightest
     text-shadow: none
 
 ::-webkit-selection
-    background: $clrPrimary
-    color: $clrBrightest
+    background: $color-primary
+    color: $color-brightest
     text-shadow: none
 
 ::-moz-selection
-    background: $clrPrimary
-    color: $clrBrightest
+    background: $color-primary
+    color: $color-brightest
     text-shadow: none
 
 // Headings
 h1, h2, h3, h4, h5, h6
-    font-family: $fontSecondary
-    color: $clrDark
+    font-family: $font-secondary
+    color: $color-dark
     font-weight: normal
     margin-top: 0
 
@@ -87,9 +87,9 @@ form
         width: 100%
         height: 30px
         padding: 4px
-        background: $clrBackground
-        border: 1px solid $clrBright
-        color: $clrText
+        background: $color-background
+        border: 1px solid $color-bright
+        color: $color-text
         +font(13px)
         +border-radius(5px)
         margin-bottom: 15px
@@ -100,16 +100,16 @@ form
     input[type="button"], input[type="submit"]
         height: 36px
         padding: 8px
-        background: $clrPrimary
+        background: $color-primary
         cursor: pointer /* hand-shaped cursor */
         cursor: hand /* for IE 5.x */
         border: none
-        color: $clrBrightest
+        color: $color-brightest
         +font(14px)
         -moz-border-radius: 5px
         border-radius: 5px
         &:hover
-            background-color: $clrSecondary
+            background-color: $color-secondary
 
 //Search Form
 form.search-form 
@@ -132,6 +132,6 @@ form.search-form
         padding: 11px 16px
         +font(14px)
         height: auto
-        background: $clrPrimary
+        background: $color-primary
        
    
