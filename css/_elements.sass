@@ -1,0 +1,65 @@
+/* ==========================================================================
+   ELEMENTS
+   ========================================================================== */
+
+  
+/*___________________________ BUTTONS ___________________________*/
+.btn, a.btn, button.btn
+    color: $color-brightest
+    background: $color-primary
+    //+border-radius(4px)
+    //+box-shadow(0px)
+    +transition(all 0.4s ease-in-out)
+    &:hover
+        background: $color-secondary
+        color: $color-brightest
+
+
+/*___________________________ ICONS ___________________________*/
+.icon-item, a.icon-item
+    display: inline-block
+    background-color: $color-primary
+    border-radius: 50%
+    text-align: center
+    color: $color-white
+    &.icon-flex
+        display: flex
+        align-items: center
+        justify-content: center
+    &.icon-small
+        +size(30px)
+        line-height: 30px
+        +font($font-size-small)
+    &.icon-medium
+        +size(45px)
+        line-height: 48px
+        +font($font-size-medium)
+    &.icon-large
+        +size(60px)
+        line-height: 60px
+        +font($font-size-large)
+    &.icon-item-o
+        background-color: transparent
+        border: 2px solid $color-primary
+        color: $color-primary
+        &.icon-white
+            border: 2px solid $color-white
+            color: $color-white
+
+/*___________________________ CARDS ___________________________*/
++breakpoint
+    .cards .card-item
+        margin-bottom: $spacing-large
+
+// Tint
+.tint
+    position: relative
+    overflow: hidden
+    &:before
+        content: ''
+        position: absolute
+        top: 0
+        z-index: 0
+        background: rgba(0, 0, 0, .5)
+        +size(100%)
+        

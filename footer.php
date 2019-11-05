@@ -27,13 +27,7 @@
     </div>
 </footer>
 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="<?php bloginfo('template_directory'); ?>/js/scripts.js"></script>
-<script type="text/javascript">
-    if ($(window).width() > 960) {
-       var s = skrollr.init();
-    }
-</script>
+<script src="<?php bloginfo('template_directory'); ?>/js/min/scripts.min.js"></script>
 
 <?php wp_footer(); ?>
 </body>

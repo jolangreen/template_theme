@@ -5,58 +5,94 @@
 
 /* Header
    ========================================================================== */
-.home header
-    background: transparent
-    
+.top
+    background: $color-dark
+    height: 40px
+
+.navbar-form
+    margin-bottom: 6px
+    margin-top: 6px
+    input[type="text"]
+        border-radius: 5px
+        height: auto !important
+        margin-bottom: 0
+        +transition(all 0.4s ease-in-out)
+        width: 200px
+        &:focus
+            width: 250px
+    i
+        left: -28px
+        position: relative
+        top: 0px
+        color: $color-medium
+    input[type="submit"]
+        background: $color-primary
+        height: 28px
+        margin-left: -12px
+        padding: 2px 8px
+
+
 header
-    position: relative
-    z-index: 1000
-    width: 100%
-    background: image-url("headers/banner1.jpg") #f1f1f1
-    background-size: cover
+    .navbar
+        margin-bottom: 0
+        padding: 20px 0
 
     .container
         position: relative
 
-        h1
+        .logo
             margin: 0
             line-height: 0
+            @media (max-width: 480px)
+                background: white
+                display: block
+                width: 100%
+                height: 100px
+                float: none
+                text-align: center
 
-        h1 a.logo
+        .logo a
+            background: image-url("logo.png") no-repeat
             display: block
             float: left
+            height: 50px
             left: 0
             width: 200px
-            height: 50px
-            background: image-url("logo.png") no-repeat
-            
+            @media (max-width: 480px)
+                margin: 0 auto
+                float: none
+                left: auto
 
-/*______ Section: Navigation _____*/
+/*___________________________ NAVIGATION ___________________________*/
 nav.navbar
+    background: transparent
+    +border-radius(0)
     margin-bottom: 0
     padding: 7px 0 4px
-    +border-radius(0)
-    background: transparent
+    @media (max-width: 480px)
+        padding: 0
+        .navbar-header
+            background: $color-primary
 
     a, a:visited
-        color: $clrBrightest
+        color: $color-medium
         &:hover
-            color: $clrBrightest
+            color: $color-brightest
             text-decoration: none
 
     .nav
         display: inline-block
         & > li
             display: inline-block
-            position: relative
             padding: 5px 0
+            position: relative
             & > a
-                padding: 8px 15px
                 +border-radius(10px)
-                text-transform: uppercase
                 margin-left: 5px
+                padding: 8px 15px
+                text-transform: uppercase
                 &:hover
-                    background-color: $clrPrimary
+                    background-color: $color-primary
 
         //Active State --
         .active > a,
@@ -64,8 +100,8 @@ nav.navbar
         .current_page_ancestor > a,
         .current-menu-item > a,
         .current-menu-ancestor > a
-            color: $clrBrightest
-            background-color: $clrPrimary
+            background-color: $color-primary
+            color: $color-brightest
             text-decoration: none
 
         //Sub-Menu --
@@ -77,7 +113,7 @@ nav.navbar
 
         .sub-menu,
         .children
-            background-color: $clrBright
+            background-color: $color-bright
             border-top: 0
             display: none
             padding: 0
@@ -89,19 +125,19 @@ nav.navbar
                 padding: 6px 5px
                 text-align: center
                 +border(bottom, #555)
-                background: $clrDark
+                background: $color-dark
                 a
-                    color: $clrBrightest
+                    color: $color-brightest
                     margin: 0
                     display: block
                     min-width: 200px
                     text-decoration: none
 
                 &:hover
-                    background: $clrSecondary
-                    color: $clrBrightest
+                    background: $color-secondary
+                    color: $color-brightest
                     a
-                        color: $clrBrightest
+                        color: $color-brightest
                           
       
             .sub-menu ul,
@@ -115,11 +151,23 @@ nav.navbar
                 display: block
 
 
+nav .nav-links
+    margin-bottom: 30px
+    a
+        background-color: transparent
+        width: 100%
+    span
+        padding: 0 20px
+        color: $color-primary
+        &:last-child
+            float: right
+
+
 /*______ Section: Page Heading _____*/
 .page-intro
     background: image-url("headers/banner1.jpg")
     background-size: cover
-    color: $clrBrightest
+    color: $color-brightest
 
     .tint
         padding: 30px 0
@@ -129,7 +177,7 @@ nav.navbar
         text-align: right
 
     .col-md-6 a, .page-intro .col-md-6 h1
-        color: $clrBrightest
+        color: $color-brightest
 
     .col-md-6 h1
         margin-bottom: 0
@@ -156,7 +204,7 @@ section
     aside
         margin-bottom: 30px
     h3
-        color: $clrText
+        color: $color-text
         margin-bottom: 5px
     ul
         padding-left: 0
@@ -164,20 +212,20 @@ section
         margin-bottom: 35px
     ul li
         list-style: none
-        border-bottom: 1px solid $clrBright
+        border-bottom: 1px solid $color-bright
         line-height: 40px
         margin-bottom: 0
         a
-            color: $clrText
+            color: $color-text
             &:hover
-                color: $clrPrimary
+                color: $color-primary
                 text-decoration: none
 
         &.current_page_item > a,
         &.current_page_ancestor > a,
         &.current-menu-item > a,
         &.current-menu-ancestor > a
-            color: $clrPrimary
+            color: $color-primary
 
         ul ul li
             border-bottom: none
@@ -195,14 +243,21 @@ section
 /* Footer
    ========================================================================== */
 footer
-    background: $clrDarkest
+    background: $color-dark
+    padding-top: 20px
+    +font(13px)
 
     hr
-        border-bottom: 1px solid $clrDark
+        border-bottom: 1px solid $color-medium
         margin: 5px 0
 
     .container .row
-        padding: 25px 0
+        padding: 15px 0
+
+        h4
+            color: $color-brightest
+            +font(15px)
+            text-transform: uppercase
 
         ul
             padding-left: 0
@@ -210,48 +265,32 @@ footer
 
             li
                 list-style: none
+                &:before
+                    margin-right: 4px
+                    content: '\f0da'
+                    font-family: 'FontAwesome'
+                    
+        a
+            color: $color-text
+
+            &:hover
+                color: $color-secondary
+                text-decoration: none
+
+        .contact-info
+            padding-left: 20px
+            i.fa
                 float: left
-                a
-                    color: $clrText
-                    text-decoration: none
-                    padding: 0 10px
+                margin-left: -20px
+                margin-top: 3px
 
-                    &:hover
-                        color: $clrPrimary
-                        text-decoration: none
-                &:after
-                    content: "|"
-                    color: $clrText
-                    &:after:last-child
-                        content: " "
+        form input[type="text"]
+            height: 34px
 
 
-        .social
-            text-align: center
-            a
-                width: 30px
-                height: 30px
-                border-radius: 50%
-                font-size: 100%
-                background: $clrText
-                line-height: 30px
-                display: block
-                margin-right: 15px
-                padding: 0 10px
-                float: right
-                color: $clrBright
++breakpoint
+    footer .container
+        text-align: center
 
-                &:hover
-                    background: $clrPrimary
-                    text-decoration: none
-            a:first-child
-                margin-right: 0
-
-        .copyright
-            text-align: center
-            +font(11px)
-            color: $clrText
-
-    .row:last-child
-        padding: 20px 0
-
+        .pull-right
+            float: none !important

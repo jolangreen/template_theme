@@ -7,8 +7,8 @@ environment = :development
 
 # Set this to the root of your project when deployed:
 http_path        = "/"
-css_dir          = "css"
-sass_dir         = "sass"
+css_dir          = "css/min"
+sass_dir         = "css"
 images_dir       = "images"
 fonts_dir        = "fonts"
 javascripts_dir  = "js"

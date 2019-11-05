@@ -1,0 +1,297 @@
+/* ==========================================================================
+   MIXINS
+   ========================================================================== */
+
+
+/* SCREEN BREAKPOINT MIXINS
+ ========================================================================== */
+
+// Screen Sizes / Responsive
+@mixin breakpoint($breakpoint: 'sm', $direction: null) {
+  @if $breakpoint == 'xl' {
+    $breakpoint: 1200px;
+  }
+  @if $breakpoint == 'lg' {
+    $breakpoint: 992px;
+  }
+  @if $breakpoint == 'md' {
+    $breakpoint: 768px;
+  }
+  @if $breakpoint == 'sm' {
+    $breakpoint: 767px;
+  }
+  @if $breakpoint == 'xs' {
+    $breakpoint: 320px;
+  }
+
+  @if $direction == 'up' {
+    @media (min-width: $breakpoint + 1) {
+      @content;
+    }
+  } @else if $breakpoint == 'tablet' {
+    @media (max-width: 768px) and (min-width: 767px) {
+      @content;
+    }
+  } @else if $breakpoint == 'phone' {
+    @media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 2),
+    (max-width: 767px) and (-webkit-min-device-pixel-ratio: 3) {
+      @content;
+    }
+  } @else {
+    @media (max-width: $breakpoint) {
+      @content;
+    }
+  }
+}
+
+
+// Screen Sizes / Responsive
+@mixin screen-xl {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin screen-lg {
+  @media (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin screen-md {
+  @media (max-width: 769px) {
+    @content;
+  }
+}
+
+@mixin screen-sm {
+	@media (max-width: 767px) {
+		@content;
+	}
+}
+
+@mixin screen-xs {
+  @media (max-width: 320px) {
+    @content;
+  }
+}
+
+@mixin screen-tablet {
+  @media (max-width: 768px) and (min-width: 767px){
+    @content;
+  }
+}
+
+@mixin screen-phone {
+  @media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 2),
+         (max-width: 767px) and (-webkit-min-device-pixel-ratio: 3) {
+    @content;
+  }
+}
+
+
+@mixin desktop-only($screen: 769px, $display: initial) {
+  display: $display;
+  @media (max-width: $screen) {
+    display: none;
+  }
+}
+
+@mixin mobile-only($screen: 769px, $display: initial) {
+  display: none;
+  @media (max-width: $screen) {
+    display: $display;
+  }
+}
+
+// Font Mixins
+$root-font-size: 16px;
+@mixin font($size, $line-height: null, $weight: null) {
+  font-size: $size; // IE fix
+  font-size: ($size / $root-font-size) * 1rem;
+  @if $line-height != null {
+    line-height: $line-height;
+  }
+  @if $weight != null {
+    font-weight: $weight;
+  }
+}
+// Usage example:
+// p {
+//  +font(24px, 1.25, bold);
+//}
+
+
+
+// Container Mixins
+@mixin container($width: 100%) {
+  position: relative;
+  padding: 0 15px;
+  margin: 0 auto;
+  max-width: $width;
+  @media (min-width: 768px) {
+    width: 750px;
+  }
+  @media (min-width: 992px) {
+    width: 970px;
+  }
+  @media (min-width: 1200px) {
+    width: 1180px;
+  }
+}
+
+
+@mixin row() {
+  margin-left: -15px;
+  margin-right: -15px;
+  &:before, .container:before {
+    content: "";
+    display: table;
+  }
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin col($width, $mobileWidth: 100%) {
+  box-sizing: border-box;
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: $width;
+  @include screen-sm {
+    width: $mobileWidth;
+  }
+}
+
+
+
+
+@mixin position($top, $right, $bottom, $left, $pos: absolute) {
+    position: $pos;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+// +position(10px, 0, 0, 2px)
+
+@mixin size($width, $height: $width) {
+    width: $width;
+    height: $height;
+}
+
+@mixin border($side, $color) {
+    border-#{$side}: 1px solid $color;
+}
+
+
+//Cross browser opacity
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+//Vertically Center
+@mixin align-vertical {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+// +align-vertical()
+
+
+// Shorten text with... (Not much browser support)
+@mixin textShorten($overflow: ellipsis){
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: $overflow;
+}
+// +truncateText
+
+// Button Arrow
+@mixin arrow($dir) {
+  width: 20px;
+  height: 20px;
+  &:after {
+    color: white;
+    top: 0px;
+    font-family: 'fontAwesome';
+    font-size: 30px;
+  }
+  @if $dir == 'left' {
+    &:after {
+      content: "\f104"
+    }
+  }
+  @if $dir == 'right' {
+    &:after {
+      content: "\f105"
+    }
+  }
+}
+
+
+// Custom Bullet
+@mixin bullet($icon: \f105) {
+	&:before {
+		font-family: 'FontAwesome';
+		margin: 0 10px 0 -15px;
+		content: '$icon';
+		@content
+	}
+}
+
+
+// Placeholder 
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content
+  }
+
+  &:-moz-placeholder {
+    @content
+  }
+
+  &::-moz-placeholder {
+    @content
+  }
+
+  &:-ms-input-placeholder {
+    @content
+  }
+}
+
+
+
+// Keyframes
+@mixin keyframes($animationName) {
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+  @-moz-keyframes #{$animationName} {
+    @content;
+  }
+  @-o-keyframes #{$animationName} {
+    @content;
+  }
+  @keyframes #{$animationName} {
+    @content;
+  }
+}
+
+// animation: exampleName 4s ease-in-out infinite
+// +keyframes(exampleName)
+
+
+// Example Function
+// Functions are good if you want to have a base value and then do some calculations on the values
+@function double($size) { 
+  @return $size * 2;
+}
+// font-size: double(20px);

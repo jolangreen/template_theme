@@ -25,8 +25,8 @@
 // ----- TABLE -----
 article table
     thead tr
-        background: $clrPrimary
-        color: $clrBrightest
+        background: $color-primary
+        color: $color-brightest
 
     tr:nth-child(2n)
         background: #e0e3e5
@@ -41,14 +41,14 @@ article table
 // Pagination
 .pagination .page-numbers
     padding: 10px
-    background: $clrPrimary
-    color: $clrBrightest
+    background: $color-primary
+    color: $color-brightest
     margin-right: 5px
     border-radius: 4px
 
 .pagination .page-numbers.current
-    background: $clrSecondary
-    color: $clrBrightest
+    background: $color-secondary
+    color: $color-brightest
     
 nav.post-navigation
     +border(top, #ccc)
@@ -56,13 +56,13 @@ nav.post-navigation
     height: 80px
     
 nav .navigation
-    border-top: 1px solid $clrBright
+    border-top: 1px solid $color-bright
     padding-top: 25px
 
 nav .nav-links a
     display: inline-block
-    color: $clrBrightest
-    background: $clrSecondary
+    color: $color-brightest
+    background: $color-secondary
     padding: 2px 8px
     +border-radius(4px)
     &:first-child
@@ -71,128 +71,8 @@ nav .nav-links a
         float: right
 
 
-// Gallery
-.gallery-area
-    .col-md-4
-        padding-left: 0
-        padding-right: 0
-    .image
-        height: 290px
 
-
-
-// Icon
-.block-icon
-    width: 40px
-    height: 40px
-    line-height: 40px
-    font-size: 100%
-    text-align: center
-    background: $clrPrimary
-    color: $clrBrightest
-    +border-radius(50%)
-    margin: 0 auto
-    display: block
-
-.block-icon-o
-    width: 40px
-    height: 40px
-    line-height: 40px
-    font-size: 100%
-    text-align: center
-    background: transparent
-    color: $clrBrightest
-    border: 2px solid $clrBrightest
-    +border-radius(50%)
-    margin: 0 auto
-    display: block
-
-.block-icon.large
-    width: 70px
-    height: 70px
-    line-height: 70px
-    +font(30px)
-
-.block-body
-    h3
-        margin-top: 20px
-        margin-bottom: 10px
-
-.social .block-icon
-    display: inline-block    
-
-// Image Hover
-.image
-    display: block
-    height: 190px
-    margin-bottom: 20px
-    overflow: hidden
-    position: relative
-    img
-        position: absolute
-        width: 100%
-        min-height: 100%
-
-.image-hover-fx
-    position: relative
-    overflow: hidden
-
-    .image-overlay
-        background-color: $clrPrimary
-        width: 100%
-        height: 100%
-        display: block
-        position: absolute
-        top: 0
-        left: 0
-        opacity: 0
-        filter: alpha(opacity=0)
-        -webkit-transition: all 0.2s ease
-        transition: all 0.2s ease
-
-    .portfolio-zoom
-        width: 65px
-        height: 65px
-        text-align: center
-        background-color: $clrDarkest
-        display: none
-        line-height: 65px
-        position: absolute
-        top: 50%
-        left: -65px
-        margin-top: -22px
-        +font(30px)
-        color: #fff
-        display: block
-        border-radius: 2px
-        &:hover
-            background: $clrPrimary
-
-    .title-fx
-        position: absolute
-        bottom: 15%
-        color: white
-        text-align: center
-        width: 100%
-        +font(20px)
-        opacity: 0
-
-// Hover Effects
-.image-item:hover .image-hover-fx .image-overlay
-    opacity: 0.50
-    filter: alpha(opacity=50)
-
-.image-item:hover .image-hover-fx .portfolio-zoom
-    display: block
-    left: 50%
-    margin-left: -35px
-    -webkit-transition: all 0.2s ease
-    transition: all 0.2s ease
-
-.image-item:hover .image-hover-fx .title-fx
-    opacity: 1
-    transition: all 0.3s ease
-
+        
 
 /* ==========================================================================
    ADVERTISING

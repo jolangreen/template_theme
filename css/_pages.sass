@@ -9,87 +9,78 @@
     overflow: hidden
     padding: 0
     position: relative
-    /* margin-top: -95px */
 
 .carousel
 
-    .container
-        position: relative
-        z-index: 9
-
     .item
+        background-size: cover
+    .item-container
+        position: relative
+        z-index: 2
         height: 700px
+        display: table
+        .row
+            display: table-cell
+            vertical-align: middle
 
-        img
-            height: 100%
-            left: 0
-            min-width: 100%
-            position: absolute
-            top: 0
+    h1, p
+        line-height: 1.25
+        text-shadow: 0 1px 1px rgba(0,0,0,.4)
 
-    .carousel-img
-        max-width: 450px
-        position: absolute
-        right: 10%
-        top: 25%
-
-        img
-            height: auto
-            position: relative
-            width: 100%
-            z-index: 6
-
-    .carousel-caption
+    h1
+        +font(50px)
+    p
+        +font($font-size-medium-large)
+    a.btn
         background-color: transparent
-        left: 15%
-        top: 28%
-        width: 36%
-        text-align: left
-
-        h1, p
-            background: rgba(0,0,0,.7)
-            display: inline-block
-            margin-bottom: 6px
-            margin: 0
-            padding: 5px 10px
-            color: #fff
-            line-height: 1.25
-            text-shadow: 0 1px 1px rgba(0,0,0,.4)
-
-        h1
-            +font(50px)
-        p
-            +font(22px)
-        a.btn
-            margin-top: 15px
-            padding: 7px 16px
-            color: $clrBrightest
-            +font(18px)
-            text-transform: uppercase
-
-
+        border: 2px solid $color-brightest
+        margin-top: $spacing-small
+        padding: 10px 20px
+        color: $color-brightest
+        +font(20px)
+        text-transform: uppercase
+    
+    .down-button
+        bottom: 40px
+        height: 80px
+        left: 47.5%
+        position: absolute
+        width: 80px
+        z-index: 10
+        border-color: $color-white
+        color: $color-brightest
+        +font(30px)
+        line-height: 80px
+        .fa
+            color: $color-white
 
     .carousel-control
         z-index: 5
 
         .glyphicon-chevron-left, .glyphicon-chevron-right
-            background: $clrDarkest
+            background: $color-darkest
             height: 80px
             top: 44%
             width: 50px
-            color: $clrBrightest
+            color: $color-brightest
             line-height: 77px
 
         .glyphicon-chevron-left
-            left: 0
+            left: 7px
+            &:before
+                font-family: 'fontAwesome'
+                content: '\f053'
         .glyphicon-chevron-right
-            right: 0
+            right: 7px
+            &:before
+                font-family: 'fontAwesome'
+                content: '\f054'
 
 
 /*___________________________ BLOG PAGE ___________________________*/
 
 .blog article
-    border-bottom: 1px solid $clrBright
+    border-bottom: 1px solid $color-bright
     margin-bottom: 30px
 
 .comment-list footer

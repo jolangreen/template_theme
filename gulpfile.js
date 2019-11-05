@@ -25,8 +25,10 @@ gulp.task('images', function() {
 
 //Scripts
 gulp.task('scripts', function() {
-    return gulp.src(['bower_components/jquery/dist/jquery.min.js', 'bower_components/bootstrap/dist/js/bootstrap.min.js', 'js/*.js'])
+    return gulp.src(['bower_components/jquery/dist/jquery.min.js', 'bower_components/bootstrap/dist/js/bootstrap.min.js', 'js/*.js' ])
     .pipe(concat('scripts.js'))
+    .pipe(gulp.dest('js'))
+    .pipe(rename({suffix: '.min'}))
     .pipe(uglify())
     .pipe(gulp.dest('js/min'))
     .pipe(notify({ message: 'Scripts task complete' }));
@@ -46,42 +48,46 @@ gulp.task('styles', function() {
  });
 
 
-//Move 'bower_components' styles to 'css'
+//Move 'bower_components' styles to 'assets'
 gulp.task('bowerstyles', function() {
     return gulp.src(['./bower_components/bootstrap/dist/css/bootstrap.min.css', './bower_components/fontawesome/css/font-awesome.min.css'])
     .pipe(gulp.dest('./css/min'));
 });
 
-//Move 'bower_components' fonts to 'fonts'
+//Move 'bower_components' fonts to 'assets'
 gulp.task('bowerfonts', function() {
     return gulp.src(['./bower_components/bootstrap/dist/fonts/**/*.{ttf,woff,eot,svg,otf}', './bower_components/fontawesome/fonts/**/*.{ttf,woff,eot,svg,otf}'])
     .pipe(gulp.dest('./fonts'));
 });
 
 
+// Clean. Delete and replace all files in the destination folder.
+gulp.task('clean', function() {
+  return gulp.src(['css', 'js', 'images', 'fonts'], {read: false})
+    .pipe(clean());
+});
+
 
 // Default task
-gulp.task('default', function() {
-    gulp.start('images', 'scripts',  'styles');
-});
+gulp.task('default', gulp.series('images', 'scripts',  'styles', 'bowerstyles'));
 
 
 // Watch
 gulp.task('watch', function() {
 
   // Watch .scss files
-  gulp.watch('css/*.sass', ['styles']);
+  gulp.watch('css/*.sass', gulp.series('styles'));
 
   // Watch .js files
-  gulp.watch('js/*.js', ['scripts']);
+  gulp.watch('scripts/*.js', gulp.series('scripts'));
 
   // Create LiveReload server
   var server = livereload();
 
-  // Watch any files in assets/, reload on change
-  gulp.watch(['js/**', 'index.html']).on('change', function(file) {
+  // Watch any files scripts, reload on change
+  /*gulp.watch(['scripts/**', 'index.html']).on('change', function(file) {
     server.changed(file.path);
-  });
+  });*/
 
   livereload.listen();
   gulp.watch('css/**').on('change', livereload.changed);
