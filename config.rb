@@ -1,5 +1,9 @@
+# 'config.rb' is used in the gulp 'styles' task for compass settings
+# Use sass globbing so that 'main.scss' can import sass files that are in a sub folder, for example @import "pages/*.sass";
+require 'sass-globbing';
+
 line_comments = false
-output_style = :compact # or :nested, :expanded, :compressed, :compact
+output_style = :compressed # or :nested, :expanded, :compressed, :compact
 environment = :development
 
 # Require any additional compass plugins here.

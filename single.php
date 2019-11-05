@@ -15,9 +15,9 @@ get_header(); ?>
 <section>
     <div class="container">
         <div class="row">
-        	<div class="primary col-md-8">
+          <div class="primary col-md-8">
 
-    			<?php while ( have_posts() ) : the_post(); ?>
+          <?php while ( have_posts() ) : the_post(); ?>
 
     				<?php get_template_part( 'template-parts/post/content', get_post_format() ); ?>
     				<?php 
@@ -33,9 +33,9 @@ get_header(); ?>
 	    				endif;
     				?>
 
-    			<?php endwhile; ?>
+          <?php endwhile; ?>
 
-    		</div><!-- .primary -->
+        </div><!-- .primary -->
             <div class="secondary col-md-4">
                 <?php get_sidebar(); ?>
             </div><!-- .secondary -->

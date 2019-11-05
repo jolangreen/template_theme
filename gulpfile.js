@@ -76,7 +76,7 @@ gulp.task('default', gulp.series('images', 'scripts',  'styles', 'bowerstyles'))
 gulp.task('watch', function() {
 
   // Watch .scss files
-  gulp.watch('css/*.sass', gulp.series('styles'));
+  gulp.watch(['css/**/*.scss', 'css/**/*.sass'], gulp.series('styles'));
 
   // Watch .js files
   gulp.watch('scripts/*.js', gulp.series('scripts'));
