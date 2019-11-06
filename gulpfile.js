@@ -69,7 +69,7 @@ gulp.task('clean', function() {
 
 
 // Default task
-gulp.task('default', gulp.series('images', 'scripts',  'styles', 'bowerstyles'));
+gulp.task('default', gulp.series('scripts',  'styles'));
 
 
 // Watch
