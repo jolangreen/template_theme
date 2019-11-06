@@ -16,9 +16,8 @@ Text Domain:    UntitledCompany
 @import "base";
 @import "layout";
 @import "modules";
-@import "pages";
-@import "page-home";
 @import "elements";
+@import "pages/*.sass";
 @import "modifiers";
 @import "mobile";
 @import "wordpress";
