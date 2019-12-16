@@ -42,7 +42,7 @@
                 </button>
             </div>
             <div class="navbar-collapse collapse">
-               	<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'menu-header-menu', 'container' => 'ul', 'menu_class' => 'nav' ) ); ?>
+               	<?php wp_nav_menu( array( 'theme_location' => 'top', 'menu_id' => 'menu-header-menu', 'container' => 'ul', 'menu_class' => 'nav' ) ); ?>
                 <?php //get_search_form(); ?>
             </div>
         </div>
