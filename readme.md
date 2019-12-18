@@ -66,6 +66,8 @@ $ gulp watch
 + [Ultimate Post Widget](https://wordpress.org/plugins/ultimate-posts-widget/)
 + [WP Editor Plugin](https://en-ca.wordpress.org/plugins/wp-editor/)
 + [WP Migrate DB](https://en-ca.wordpress.org/plugins/wp-migrate-db/)
++ [AnimateIt](https://en-ca.wordpress.org/plugins/animate-it/)
+  [Class Generator](https://www.downloads.eleopard.in/class-generator.html)
 
 ## Security
 + Install [Limit Login Attempts](http://www.advancedcustomfields.com)
