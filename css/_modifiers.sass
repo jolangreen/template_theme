@@ -6,15 +6,15 @@
    ========================================================================== */
 
 /*______ TEXT COLOR _____*/
-.color-white
+.color-white, a.color-white
   color: #fff
-.color-dark
+.color-dark, a.color-dark
   color: $color-darkest
-.text-grey, .text-gray
+.text-grey, .text-gray, a.text-grey, a.text-gray
   color: $color-text
-.color-primary
+.color-primary, a.color-primary
   color: $color-primary
-.color-secondary
+.color-secondary, a.color-secondary
   color: $color-secondary
 
 /*______ FONT FAMILY _____*/
@@ -38,6 +38,8 @@
   +font($font-size-x-large, 1.2)
 .text-xx-large
   +font($font-size-xx-large)
+.text-bold
+  font-weight: bold
 
 /*______ TEXT POSITION _____*/
 .text-center
