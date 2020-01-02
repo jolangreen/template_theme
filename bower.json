@@ -28,7 +28,7 @@
      "./dist/fonts/glyphicons-halflings-regular.woff"
   ],
   "dependencies": {
-    "bootstrap": "~3.2.0",
+    "bootstrap": "~3.4.1",
     "jquery": "~2.1.1",
     "fontawesome": "~4.6.3"
   }
