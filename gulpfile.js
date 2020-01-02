@@ -27,7 +27,6 @@ gulp.task('images', function() {
 gulp.task('scripts', function() {
     return gulp.src(['bower_components/jquery/dist/jquery.min.js', 'bower_components/bootstrap/dist/js/bootstrap.min.js', 'js/*.js' ])
     .pipe(concat('scripts.js'))
-    .pipe(gulp.dest('js'))
     .pipe(rename({suffix: '.min'}))
     .pipe(uglify())
     .pipe(gulp.dest('js/min'))
@@ -79,7 +78,7 @@ gulp.task('watch', function() {
   gulp.watch(['css/**/*.scss', 'css/**/*.sass'], gulp.series('styles'));
 
   // Watch .js files
-  gulp.watch('scripts/*.js', gulp.series('scripts'));
+  gulp.watch('js/*.js', gulp.series('scripts'));
 
   // Create LiveReload server
   var server = livereload();
