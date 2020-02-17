@@ -135,19 +135,26 @@
 /* RESPONSIVE
    ========================================================================== */
 .desktop-only
-  display: initial
+  display: block
+  @media (max-width: 769px)
+    display: none
+
+.desktop-only--inline-block
+  display: inline-block
   @media (max-width: 769px)
     display: none
 
 .mobile-only
   display: none
   @media (max-width: 769px)
-    display: initial
+    display: block
 
-.mobile-only-block
+.mobile-only--inline-block
   display: none
   @media (max-width: 769px)
-    display: block
+    display: inline-block
+
+
    
 /* SPACING
    ========================================================================== */
