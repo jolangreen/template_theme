@@ -7,7 +7,7 @@
 
 /*______ TEXT COLOR _____*/
 .color-white, a.color-white
-  color: #fff
+  color: $color-white
 .color-dark, a.color-dark
   color: $color-darkest
 .text-grey, .text-gray, a.text-grey, a.text-gray
@@ -78,7 +78,9 @@
 .background-blue
   background-color: $color-secondary
 .background-grey
-  background-color: #f7f7f7
+  background-color: $color-medium
+.background-white
+  background-color: $color-white
 
 .background-dark
   h1, h2, h3, h4, p, a, li
@@ -137,6 +139,11 @@
   @media (max-width: 769px)
     display: none
 
+.desktop-only--inline-block
+  display: inline-block
+  @media (max-width: 769px)
+    display: none
+
 .mobile-only
   display: none
   @media (max-width: 769px)
@@ -147,10 +154,6 @@
   @media (max-width: 769px)
     display: inline-block
 
-.desktop-only--inline-block
-  display: inline-block
-  @media (max-width: 769px)
-    display: none
 
 /* SPACING
    ========================================================================== */
@@ -311,3 +314,11 @@
   padding-left: $spacing-x-large
 .padding-left-xx-large
   padding-left: $spacing-xx-large
+
+
+/*_________________ MOBILE MODIFIERS _________________*/
++breakpoint
+  .mobile-margin-bottom-medium
+    margin-bottom: $spacing-medium
+  .mobile-margin-bottom-large
+    margin-bottom: $spacing-large
