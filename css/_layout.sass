@@ -5,94 +5,60 @@
 
 /* Header
    ========================================================================== */
-.top
-    background: $color-dark
-    height: 40px
-
-.navbar-form
-    margin-bottom: 6px
-    margin-top: 6px
-    input[type="text"]
-        border-radius: 5px
-        height: auto !important
-        margin-bottom: 0
-        +transition(all 0.4s ease-in-out)
-        width: 200px
-        &:focus
-            width: 250px
-    i
-        left: -28px
-        position: relative
-        top: 0px
-        color: $color-medium
-    input[type="submit"]
-        background: $color-primary
-        height: 28px
-        margin-left: -12px
-        padding: 2px 8px
-
-
 header
-    .navbar
-        margin-bottom: 0
-        padding: 20px 0
-
     .container
         position: relative
+        +breakpoint
+            text-align: center
+    .container.top
+        padding: 20px 15px
 
         .logo
-            margin: 0
-            line-height: 0
-            @media (max-width: 480px)
-                background: white
-                display: block
-                width: 100%
-                height: 100px
-                float: none
-                text-align: center
+            +breakpoint('sm', 'up')
+                float: left
+            a
+                background: image-url("logo.png") no-repeat center top
+                display: inline-block
+                height: 50px
+                width: 162px
 
-        .logo a
-            background: image-url("logo.png") no-repeat
-            display: block
-            float: left
-            height: 50px
-            left: 0
-            width: 200px
-            @media (max-width: 480px)
-                margin: 0 auto
-                float: none
-                left: auto
+        .social 
+            +breakpoint('sm', 'up')
+                float: right
+            a
+                border: 2px solid $color-text
+                margin-left: 10px
+
+
 
 /*___________________________ NAVIGATION ___________________________*/
 nav.navbar
-    background: transparent
+    background: $color-background
+    border: none
     +border-radius(0)
     margin-bottom: 0
-    padding: 7px 0 4px
-    @media (max-width: 480px)
-        padding: 0
-        .navbar-header
-            background: $color-primary
+    text-align: center
 
     a, a:visited
-        color: $color-medium
-        &:hover
-            color: $color-brightest
-            text-decoration: none
+        color: $color-text
 
+    //Adjust Nav Bar BG Color
+    .navbar-collapse
+        background: $color-darkest
     .nav
-        display: inline-block
+        margin: 0
         & > li
             display: inline-block
-            padding: 5px 0
+            list-style: none
             position: relative
             & > a
-                +border-radius(10px)
-                margin-left: 5px
-                padding: 8px 15px
+                padding: 15px 50px
                 text-transform: uppercase
+                +font(17px)
                 &:hover
-                    background-color: $color-primary
+                    background: $color-primary
+                    color: $color-brightest
+                    text-decoration: none
 
         //Active State --
         .active > a,
@@ -104,12 +70,12 @@ nav.navbar
             color: $color-brightest
             text-decoration: none
 
-        //Sub-Menu --
         .menu-toggle
             display: none
-
+            
+        //Sub-Menu --
         .sub-menu
-            top: 30px
+            top: 50px
 
         .sub-menu,
         .children
@@ -121,6 +87,8 @@ nav.navbar
             left: -2px
             z-index: 3000
             list-style: none
+            +breakpoint
+                position: static
             li
                 padding: 6px 5px
                 text-align: center
@@ -146,9 +114,6 @@ nav.navbar
                 left: 100%
                 top: 0px
       
-            //HOVER ACTIVATION
-            li:hover > ul, li:hover > ul
-                display: block
 
 
 nav .nav-links
@@ -246,6 +211,7 @@ footer
     background: $color-dark
     padding-top: 20px
     +font(13px)
+    color: $color-brightest
 
     hr
         border-bottom: 1px solid $color-medium
@@ -271,7 +237,7 @@ footer
                     font-family: 'FontAwesome'
                     
         a
-            color: $color-text
+            color: $color-bright
 
             &:hover
                 color: $color-secondary
@@ -286,6 +252,7 @@ footer
 
         form input[type="text"]
             height: 34px
+            padding: 4px
 
 
 +breakpoint

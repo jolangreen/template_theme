@@ -10,8 +10,7 @@
 <link rel="stylesheet" href="css/min/bootstrap.min.css" />
 <link rel="stylesheet" href="css/min/font-awesome.min.css" />
 
-<link href="style.css" rel="stylesheet" type="text/css" data-skrollr-stylesheet />
-
+<link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body class="home">
@@ -20,24 +19,38 @@
 ================================================== -->
 <header>
     <nav class="navbar">
-        <div class="container">
-            <div class="navbar-header">
-                <div class="logo"><a href="<?php echo home_url( '/' ); ?>"></a></div>
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                </button>
+        <div class="container top">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="logo"><a href="<?php echo home_url( '/' ); ?>"></a></div>
+                    <div class="social desktop-only">
+                        <a href="#" class="icon-item icon-item-o icon-medium"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="icon-item icon-item-o icon-medium"><i class="fa fa-twitter"></i></a>
+                        <a href="#" class="icon-item icon-item-o icon-medium"><i class="fa fa-linkedin"></i></a>
+                        <a href="#" class="icon-item icon-item-o icon-medium"><i class="fa fa-pinterest"></i></a>
+                    </div>
+                </div>
             </div>
-            <div class="navbar-collapse collapse pull-right">
-               <ul id="menu-header-menu" class="nav navbar-nav">
-                    <li class="current-menu-item"><a href="#">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
+        </div>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse">
+            <div class="mobile-only padding-top-medium">
+              Get Quote
+              <hr class="margin-top-medium">
             </div>
+            <ul id="menu-header-menu" class="nav">
+                <li class="current-menu-item"><a href="#">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
     </nav>
 </header>
@@ -95,8 +108,8 @@
             </div>
             <div class="background-content col-md-6">
                 <h2>SAMPLE TITLE</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto cum provident ab, quaerat dolor eos ea odit. Numquam dolor totam dolorum voluptatibus excepturi similique tempore explicabo ratione. Quaerat quibusdam reiciendis cum laudantium cupiditate aperiam est officiis optio nostrum! Praesentium explicabo nesciunt nemo dolores eos commodi aliquid, repellat maxime laboriosam, veritatis temporibus vero! Magnam, ut laboriosam illo odio recusandae consequuntur quis similique aliquam, eius sapiente dolorum nihil atque sint nesciunt animi! Sunt, eaque, laborum! Vitae facere perferendis recusandae assumenda laudantium, quasi, odit reprehenderit omnis consequatur labore quia! Nobis aperiam repellendus sapiente minus, dolore, saepe cumque quibusdam sit quaerat quam quasi iste.</p>
-                <a href="#" class="btn">Learn More</a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto cum provident ab, quaerat dolor eos ea odit. Numquam dolor totam dolorum voluptatibus excepturi similique tempore explicabo ratione. Quaerat quibusdam reiciendis cum laudantium cupiditate aperiam est officiis optio nostrum! Praesentium explicabo nesciunt nemo dolores eos commodi aliquid, repellat maxime laboriosam, veritatis<br class="desktop-only" /> temporibus vero! Magnam, ut laboriosam illo odio recusandae consequuntur quis similique aliquam, eius sapiente dolorum nihil atque sint nesciunt animi! Sunt, eaque,<br class="desktop-only" /> laborum! Vitae facere perferendis recusandae assumenda laudantium, quasi, odit reprehenderit omnis consequatur labore quia! Nobis aperiam repellendus sapiente minus, dolore, saepe cumque quibusdam sit quaerat quam quasi iste.</p>
+                <a href="#" class="btn desktop-only">Learn More</a>
             </div>
         </div>
     </div>
@@ -258,7 +271,6 @@
         </div><!-- /.container -->
     </section>
 
-
     <section>
         <div class="container">
             <div class="row">
@@ -313,7 +325,7 @@
                 </div>
                 <div class="col-md-3">
                     <h4>Services</h4>
-                    <ul class="list-unstyled">
+                    <ul>
                         <li><a href="#">Service1</a></li>
                         <li><a href="#">Rerum corrupti</a></li>
                         <li><a href="#">Dolor sit amet</a></li>
@@ -324,7 +336,7 @@
                 <div class="col-md-3">
                     <h4>Contact</h4>
                     <div class="contact-info">
-                        <i class="fa fa-envelope"></i> <span><a href="mailto:info@UntitledCompany.com">info@UntitledCompany.com</a></span><br>
+                        <i class="fa fa-envelope"></i> <a href="mailto:info@UntitledCompany.com">info@UntitledCompany.com</a><br>
                         <i class="fa fa-phone"></i> 555-555-0101<br><br>
                         <i class="fa fa-home"></i> 1187 Home Rd.<br>Toronto, ON A1A 1A1
                     </div>
@@ -353,7 +365,6 @@
 
 
 <script src="js/min/scripts.min.js"></script>
-<script src="bower_components/jquery/dist/jquery.min.map"></script>
 <!-- LiveReload -->
 <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 </body>
