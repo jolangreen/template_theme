@@ -1,11 +1,13 @@
-/*
-//load first banner item
+/* LOAD FIRST BANNER ITEM
+   ========================================================================== 
 $(function(){
   $('.item').first().addClass('active');
 });
+*/
 
 
-//Smooth Anchor Link
+/* SMOOTH ANCHOR LINK
+   ========================================================================== 
 $(function() {
   $('a[href*=#]:not([href=#])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
@@ -20,23 +22,11 @@ $(function() {
     }
   });
 });
+*/
 
 
-//animate elements
-$(window).scroll(function() {
-    $('#object').each(function(){
-    var imagePos = $(this).offset().top;
-
-    var topOfWindow = $(window).scrollTop();
-        if (imagePos < topOfWindow+800) {
-            $(this).addClass("slideUp");
-        }
-    });
-});
-
-
-//Full Height
-/*
+/* FULL HEIGHT
+   ========================================================================== 
 $(function(){
     $('.item') .css({'height': (($(window).height()))+'px'});
     $(window).resize(function(){
