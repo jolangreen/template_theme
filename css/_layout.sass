@@ -47,18 +47,23 @@ nav.navbar
         background: $color-darkest
     .nav
         margin: 0
-        & > li
+        li
+            position: relative
             display: inline-block
             list-style: none
-            position: relative
-            & > a
-                padding: 15px 50px
+            +breakpoint
+                display: block
+                text-align: center
+            a
+                display: block
                 text-transform: uppercase
                 +font(17px)
                 &:hover
                     background: $color-primary
                     color: $color-brightest
                     text-decoration: none
+        & > li a
+            padding: 15px 50px
 
         //Active State --
         .active > a,
@@ -72,51 +77,47 @@ nav.navbar
 
         .menu-toggle
             display: none
+      
+        //HOVER ACTIVATION
+        li:hover > ul
+            display: block
             
-        //Sub-Menu --
+
+        //SUB-MENU --
         .sub-menu
             top: 50px
 
         .sub-menu,
         .children
-            background-color: $color-bright
-            border-top: 0
-            display: none
-            padding: 0
             position: absolute
             left: -2px
             z-index: 3000
+            display: none
             list-style: none
+            border-top: 0
+            padding: 0
+            +breakpoint('sm', 'up')
+                background-color: $color-dark
             +breakpoint
                 position: static
             li
-                padding: 6px 5px
-                text-align: center
                 +border(bottom, #555)
-                background: $color-dark
+                text-align: center
                 a
-                    color: $color-brightest
                     margin: 0
-                    display: block
+                    padding: 6px 5px
                     min-width: 200px
-                    text-decoration: none
-
-                &:hover
-                    background: $color-secondary
                     color: $color-brightest
-                    a
+                    text-decoration: none
+                    +font($font-size-small)
+                    &:hover
+                        background: $color-secondary
                         color: $color-brightest
                           
-      
-            .sub-menu ul,
-            .children ul
-                border-left: 0
+            ul
+                list-style: none
                 left: 100%
-                top: 0px
-      
-        //HOVER ACTIVATION
-        li:hover > ul
-            display: block
+                top: 0
 
 
 nav .nav-links
