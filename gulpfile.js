@@ -49,13 +49,14 @@ gulp.task('styles', function() {
 
 //Move 'bower_components' styles to 'assets'
 gulp.task('bowerstyles', function() {
-    return gulp.src(['./bower_components/bootstrap/dist/css/bootstrap.min.css', './bower_components/fontawesome/css/font-awesome.min.css'])
+    return gulp.src(['./bower_components/bootstrap/dist/css/bootstrap.min.css', './bower_components/fontawesome/css/all.min.css'])
+    .pipe(rename('font-awesome.min.css'))
     .pipe(gulp.dest('./css/min'));
 });
 
 //Move 'bower_components' fonts to 'assets'
 gulp.task('bowerfonts', function() {
-    return gulp.src(['./bower_components/bootstrap/dist/fonts/**/*.{ttf,woff,eot,svg,otf}', './bower_components/fontawesome/fonts/**/*.{ttf,woff,eot,svg,otf}'])
+    return gulp.src(['./bower_components/bootstrap/dist/fonts/**/*.{ttf,woff,eot,svg,otf}', './bower_components/fontawesome/webfonts/**/*.{ttf,woff,eot,svg,otf}'])
     .pipe(gulp.dest('./fonts'));
 });
 
