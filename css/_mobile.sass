@@ -21,6 +21,9 @@
 
 // Phones & Tablet Portrait   
 +screen-md
+
+// Phone Specific - Samsung Galaxy Note 2/ Iphone 6 (width: 767)
++screen-sm 
     body
         padding-left: 0
         padding-right: 0
@@ -51,8 +54,13 @@
         .pull-right
             float: none !important
 
-// Phone Specific - Samsung Galaxy Note 2/ Iphone 6 (width: 767)
-+screen-sm 
+    // Fix for mobile view of WP media & content display in WYSIWYG
+    .wp-block-media-text
+        grid-template-columns: 100% 1fr
+        .wp-block-media-text__content
+            grid-column: 1
+            grid-row: 2
+            padding-top: $spacing-medium
          
 //Iphone 4 / 5 (width: 320)
 +screen-xs
