@@ -675,3 +675,12 @@ add_action( 'login_enqueue_scripts', 'my_login_logo' );
 
 // Version CSS file in a theme
 //wp_enqueue_style( 'theme-styles', get_stylesheet_directory_uri() . '/style.css', array(), filemtime( get_stylesheet_directory() . '/style.css' ) );
+
+// Get Site URL in Admin
+add_action( 'init', function() {
+
+  add_shortcode( 'site_url', function( $atts = null, $content = null ) {
+    return site_url();
+  } );
+
+} );
