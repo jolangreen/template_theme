@@ -44,6 +44,15 @@ $ bower install
 $sudo npm install --save-dev
 ```
 
+```bash
+$sudo npm i node-sass --save-dev
+```
+
++ Run Node Sass
+```bash
+npm run compile:sass
+```
+
 + Run Gulp
 ```bash
 $ gulp
